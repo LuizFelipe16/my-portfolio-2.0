@@ -32,12 +32,12 @@ export const ViewAuthor = styled.div`
     ${theme.column.startCenter}
 
     h1 {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
         
     p {
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
         
     .social {
