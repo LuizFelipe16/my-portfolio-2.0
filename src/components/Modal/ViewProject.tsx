@@ -91,7 +91,7 @@ export function ModalViewProject({ isOpen, onClose, project }: IModalViewProject
                 bg: 'cyan.600'
               }}
             >
-              <Link href={project?.github} target="_blank">
+              <Link href={project?.link} target="_blank">
                 Acessar Site/Plataforma Web
               </Link>
               <Icon as={FaEye} ml="2" fontSize="lg" />
