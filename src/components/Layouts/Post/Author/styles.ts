@@ -10,7 +10,7 @@ export const ViewAuthor = styled.div`
 
   color: var(--gray-900);
   padding: 1.2rem 3.2rem 1.2rem 3.2rem;
-  border-radius: 0.5rem 9999px 9999px 0.5rem;
+  border-radius: 1rem 9999px 9999px 1rem;
 
   background: var(--cyan-500);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -37,7 +37,7 @@ export const ViewAuthor = styled.div`
         
     p {
       font-weight: bold;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
         
     .social {
