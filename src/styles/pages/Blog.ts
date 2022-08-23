@@ -69,4 +69,4 @@ export const Spaces = styled.div`
       padding: 0.5rem;
     }
   }
-`
+`;

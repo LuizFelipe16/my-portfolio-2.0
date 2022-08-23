@@ -11,7 +11,7 @@ import type { PostData, RouterCategories } from '../../types';
 import { Footer, Loading } from '../../components';
 import { Interactive3DElement, Link, Text, TitlePage, View } from '../../_app';
 
-import { Posts, Post } from './styles';
+import { Posts, Post } from '../../styles/pages/Posts';
 import { Button, Icon, Spinner } from '@chakra-ui/react';
 import { MyParticles } from '../../components/MyParticles';
 import { Navigation } from '../../components/Posts';

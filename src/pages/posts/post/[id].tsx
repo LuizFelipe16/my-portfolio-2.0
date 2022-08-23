@@ -9,7 +9,7 @@ import { Author, Footer, HeaderPost, Loading, OptionsButtons } from '../../../co
 import { TitlePage, View, Text, Divider } from '../../../_app';
 import { PostData } from '../../../types';
 
-import { Post } from './styles';
+import { Post } from '../../../styles/pages/Post';
 
 interface PostProps {
   post: PostData;

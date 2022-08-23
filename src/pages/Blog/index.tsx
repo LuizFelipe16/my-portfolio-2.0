@@ -4,7 +4,7 @@ import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { ItemSpace, Loading } from '../../components';
 import { Link, Text, TitlePage, View } from '../../_app';
 
-import { Spaces } from './styles';
+import { Spaces } from '../../styles/pages/Blog';
 
 export default function PageBlog() {
   const [isLoading, setIsLoading] = useState(true);

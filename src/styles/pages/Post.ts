@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { styledPresets } from '../../../_app';
+import { styledPresets } from '../../_app';
 
 export const Post = styled.div`
   width: 100vw;

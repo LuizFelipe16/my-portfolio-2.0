@@ -165,4 +165,4 @@ export const Post = styled.div`
       &:hover { text-decoration: underline; }
     }
   } 
-`
+`;
