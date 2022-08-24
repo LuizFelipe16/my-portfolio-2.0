@@ -33,6 +33,11 @@ export const About = styled.div`
 
     transition: 0.2s;
     animation: blinker_circle 3s infinite both;
+
+    &:hover {
+      z-index: 100;
+      transform: scale(1.1);
+    }
   }
 
   @keyframes blinker_circle {
@@ -70,7 +75,7 @@ export const About = styled.div`
       font-family: 'JetBrains Mono', monospace;
       color: var(--cyan-500);
       font-weight: 100;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
 
     .text-info {

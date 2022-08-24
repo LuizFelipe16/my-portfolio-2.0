@@ -27,9 +27,9 @@ export function Navbar() {
     >
       <ItemNav href="about" text="Quem sou" />
       <ItemNav href="services" text="O que faço" />
-      <ItemNav href="portfolio" text="Meu portfólio" />
+      <ItemNav href="portfolio" text="Projetos" />
       <ItemNav href="contact" text="Fale comigo" />
-      <ItemNav isPage href="posts/programacao" text="Blog" />
+      <ItemNav isPage href="posts/web-react" text="Blog" />
     </HStack>
   );
 }

@@ -9,7 +9,7 @@ export function SessionServices() {
     <Services id="services">
       <div>
         <h1>
-          O que eu Faço
+          O que faço
         </h1>
         <h2>
           serviços e soluções
@@ -20,16 +20,16 @@ export function SessionServices() {
           icon={FaFileCode}
           title="Desenvolvimento"
           text={`
-            Desenvolvimento de sites web profissionais, 
-            blogs, portfólios, landing pages, paginas 
-            institucionais e/ou de apresentação com responsividade em dispositivos mobile.
+            Planejo e desenvolvo sites profissionais, 
+            blogs, landing pages, páginas 
+            institucionais e/ou de apresentação com ferramentas modernas.
           `}
         />
         <ItemService
           icon={FaPenNib}
           title="Designs"
           text={`
-            Crio designs de alta qualidade com neurodesign e neurocopy, intuitivos que 
+            Crio designs de alta qualidade com neurodesign e neurocopy, intuitivos e modernos que 
             prendem a atenção, para as mídias sociais, assim como criativos para anúncios online.
           `}
         />

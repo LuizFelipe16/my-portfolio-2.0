@@ -1,9 +1,15 @@
 import { Flex, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Button, Icon, useDisclosure, VStack } from "@chakra-ui/react";
 import { useRef } from "react";
 import { FaIndent } from "react-icons/fa";
+import { Category } from "../../../types";
+import { Settings } from "../../../_app/Settings";
 import { ItemSidebarNav } from "./ItemSidebarNav";
 
-export function SidebarNav() {
+type NavbarProps = {
+  category: Category;
+};
+
+export function SidebarNav({ category }: NavbarProps) {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const btnRef = useRef();
 
@@ -37,25 +43,33 @@ export function SidebarNav() {
             <DrawerHeader
               display="flex"
               flexDirection="row"
-              mb="12"
+              mb="5"
               color="cyan.500"
               fontSize="2xl"
             >
-              MyBlog
+              {Settings.Site.BlogTitle}
             </DrawerHeader>
             <DrawerBody>
               <VStack
                 w="100%"
                 color="gray.50"
-                fontSize="lg"
-                spacing="10"
+                fontSize="md"
+                spacing="3"
                 align="flex-start"
                 fontFamily="Montserrat"
               >
-                <ItemSidebarNav href="about" text="Front-end" />
-                <ItemSidebarNav href="services" text="Mobile" />
-                <ItemSidebarNav href="portfolio" text="Back-end" />
-                <ItemSidebarNav isPage href="/" text="Voltar" />
+                <ItemSidebarNav 
+                  isPage 
+                  isActive={category === 'web-react'}
+                  href="posts/web-react" 
+                  text="WEB"
+                />
+                <ItemSidebarNav 
+                  isPage 
+                  isActive={category === 'mobile-react-native'}
+                  href="posts/mobile-react-native"  
+                  text="Mobile" 
+                />
               </VStack>
             </DrawerBody>
           </DrawerContent>

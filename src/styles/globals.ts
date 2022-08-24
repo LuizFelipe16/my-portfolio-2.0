@@ -46,6 +46,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  *::selection {
+    color: var(--gray-900);
+    background-color: var(--cyan-500)
+  }
+
   html {
     @media (max-width: 1000px) {
       font-size: 93.75%;

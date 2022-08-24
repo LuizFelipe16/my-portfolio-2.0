@@ -7,6 +7,7 @@ import { Interactive3DElement, View } from "../../../_app";
 
 import { Entry } from "./styles";
 import { MyParticles } from "../../MyParticles";
+import { Settings } from "../../../_app/Settings";
 
 export function SessionEntry() {
   const [isLoadingElements, setIsLoadingElements] = useState(true);
@@ -39,7 +40,7 @@ export function SessionEntry() {
           fontFamily="JetBrains Mono"
           textShadow="2xl"
         >
-          Dev Louiz
+          {Settings.Site.Name}
         </Text>
 
         <h1 className="text-typing">
@@ -50,7 +51,7 @@ export function SessionEntry() {
         </h1>
 
         <div data-aos='fade-right' data-aos-duration='1000'>
-          <NLink href='/posts/programacao' passHref>
+          <NLink href='/posts/web-react' passHref>
             <Button 
               className='access-button'
               boxShadow='dark-lg'

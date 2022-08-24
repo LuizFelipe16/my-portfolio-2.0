@@ -1,5 +1,6 @@
 export type PostData = {
   uid?: string;
+  type?: string;
   first_publication_date: string | null;
   data: {
     title: string;
@@ -14,6 +15,10 @@ export type PostData = {
     content: {
       heading: string;
       body: string;
+      thumb: {
+        url: string;
+        alt: string;
+      };
     }[];
   };
 }

@@ -61,7 +61,7 @@ export const Skills = styled.div`
     }
   }
 
-  @media (min-width: 200px) and (max-width: 980px) {
+  @media (min-width: 200px) and (max-width: 1100px) {
     & {
       flex-direction: column;
       align-items: center;

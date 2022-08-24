@@ -1,17 +1,26 @@
 import styled from "styled-components";
 import NLink from 'next/link';
 import { Text } from "../../../_app";
+import { Category } from "../../../types";
+import { Settings } from "../../../_app/Settings";
 
-export function Navbar() {
+type NavbarProps = {
+  category: Category;
+};
+
+export function Navbar({ category }: NavbarProps) {
   return (
     <Navigation>
       <NLink href='/' passHref>
-        <Text className='goBack' type='h1' text='MyBlog' />
+        <Text className='goBack' type='h1' text={Settings.Site.BlogTitle} />
       </NLink>
       <hr className='nave-line' />
-      <Text text='Front-end' />
-      <Text text='Mobile' />
-      <Text text='Back-end' />
+      <NLink href='/posts/web-react' passHref>
+        <Text className={`${category === 'web-react' && 'active'}`} text='Web' />
+      </NLink>
+      <NLink href='/posts/mobile-react-native' passHref>
+        <Text className={`${category === 'mobile-react-native' && 'active'}`} text='Mobile' />
+      </NLink>
     </Navigation>
   );
 }
@@ -56,6 +65,10 @@ const Navigation = styled.div`
     transition: 0.2s;
 
     &:hover {
+      opacity: 1;
+    }
+    
+    &.active {
       opacity: 1;
     }
   }

@@ -1,7 +1,7 @@
 import { NextRouter } from "next/router";
 import type { ParsedUrlQuery } from "querystring";
 
-type Category = 'programacao' | 'design';
+export type Category = 'web-react' | 'mobile-react-native';
 
 interface Query extends ParsedUrlQuery {
   category: Category;

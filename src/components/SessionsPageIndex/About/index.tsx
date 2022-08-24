@@ -15,7 +15,7 @@ export function SessionAbout() {
     <About id="about">
       <div className="infos">
         <div className="flex-dir-column" data-aos="fade-down-right" data-aos-duration="1000">
-          <h2>Meu Objetivo</h2>
+          <h2>Citação</h2>
           <br />
           <p className="text-italic text-info">
             <Icon className="quote" color="#48CDD0" mr="2" as={FaQuoteLeft} />
@@ -38,12 +38,12 @@ export function SessionAbout() {
       <div data-aos={!!isMobileVersion ? "zoom-in-right" : "zoom-in-left"} data-aos-duration="1000" className="about">
         <h1>Olá,</h1>
         <p>
-          me chamo luiz, desenvolvedor fullStack,
-          especializado em Frontend Web focado em UX e design gráfico de qualidade.
+          me chamo luiz, me aventuro em Back-end, mas sou
+          especializado em Front-end Web focado em UX e design gráfico de qualidade.
 
-          Meu começo foi com JS há três anos, no ensino técnico e fui me aprofundar sozinho.
+          Comecei há três anos e alguns meses, desde então
 
-          Criei diversos e variados projetos, sempre me aprimorando nas tecnologias que uso para
+          criei diversos e variados projetos, sempre me aprimorando nas tecnologias que uso para
           explorar possibilidades ilimitadas que o código é capaz de oferecer,
           buscando soluções para os problemas que encontro.
         </p>

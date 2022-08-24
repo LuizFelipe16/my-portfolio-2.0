@@ -31,14 +31,14 @@ export function ModalViewProject({ isOpen, onClose, project }: IModalViewProject
       <ModalContent bg="gray.900" color="gray.100">
         <ModalHeader>
           <HStack spacing={2}>
-            <Icon as={FaDesktop} ml="2" fontSize="lg" color={'cyan.500'} />
-            <Text>{project.title}</Text>
+            <Icon as={FaDesktop} ml="2" mt='1' fontSize="xl" color={'cyan.500'} />
+            <Text fontSize={'2xl'}>{project.title}</Text>
           </HStack>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <VStack>
-            <Text fontFamily="Montserrat" lineHeight="7" fontWeight="200" fontSize="1rem">
+            <Text fontFamily="Nunito" lineHeight="7" fontWeight="300" fontSize="lg">
               {project.description}
             </Text>
           </VStack>

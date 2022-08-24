@@ -5,8 +5,8 @@
 
   border: 1px solid var(--gray-900);
   background: var(--gray-900);
-  width: 4rem;
-  height: 4rem;
+  width: 3.2rem;
+  height: 3.2rem;
 
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
   z-index: 100;
   
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   
   transition: 0.2s;
   cursor: pointer;
@@ -40,14 +40,14 @@
 
 .options_post_top {
   left: 0;
-  top: 48%;
+  top: 38%;
 }
 
 .options_post {
   width: auto;
   height: auto;
 
-  padding: 0.7rem;
+  padding: 0.6rem;
   z-index: 10000;
   position: fixed;
 

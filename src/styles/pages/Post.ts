@@ -96,6 +96,14 @@ export const Post = styled.div`
     
           margin-bottom: 1.35rem !important;
         }
+
+        > img {
+          width: 100%;
+          height: 20rem;
+          object-fit: cover;
+          margin-top: 2rem;
+          border-radius: 1rem;
+        }
     
         .postContent {
           color: var(--white);

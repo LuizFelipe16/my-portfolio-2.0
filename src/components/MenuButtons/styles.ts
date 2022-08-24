@@ -4,8 +4,8 @@ export const MenuTools = styled.div`
   width: 5rem;
   height: auto;
 
-  bottom: 1.5rem;
-  right: 1rem;
+  bottom: 2rem;
+  right: 0.5rem;
   
   z-index: 1000;
   position: fixed;

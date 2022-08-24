@@ -21,10 +21,10 @@ function IndexPage() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoadingActive(false);
-    }, 1000);
+    }, 500);
   }, []);
 
-  if (!!isLoadingActive) return <Loading text='Olá, eu sou...' />;
+  if (!!isLoadingActive) return <Loading text='Hello World!' />;
 
   return (
     <Flex direction="column">

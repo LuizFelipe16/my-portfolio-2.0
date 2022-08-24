@@ -26,6 +26,8 @@ export function ItemPortfolio({ project, animation, dur }: IItemPortfolioProps) 
         <Button
           onClick={onOpen}
           w="100%"
+          h='2.5rem'
+          px={5}
           borderRadius="full"
           bg="#2D3748"
           color='cyan.500'

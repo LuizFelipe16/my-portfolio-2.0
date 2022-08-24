@@ -16,7 +16,7 @@ const defaultConfig = {
     },
   },
   fullScreen: true,
-  fpsLimit: 120,
+  fpsLimit: 100,
   interactivity: {
     events: {
       onHover: {

@@ -14,8 +14,7 @@ export function SessionSkills() {
           img="/illustrations/code.svg"
           title="Clean Code"
           text={`
-              Tenho como minha principal diretriz durante o desenvolvimento, à
-              qualidade do código  seguindo as melhores práticas do mercado.
+              Desenvolvo códigos prezando à qualidade e sempre com o objetivo de seguir as melhores práticas do mercado.
             `}
         />
         <ItemSkill
@@ -41,8 +40,7 @@ export function SessionSkills() {
           title="Desenvolvimento Moderno"
           text={`
               Desenvolvo projetos usando as melhores e mais modernas ferramentas do 
-              mercado, com interfaces que transmitem modernidade e intuitividade, 
-              chamando a atenção dos usuários.
+              mercado, com interfaces que transmitem modernidade e intuitividade.
             `}
         />
         <ItemSkill
@@ -50,9 +48,7 @@ export function SessionSkills() {
           img="/illustrations/problens.svg"
           title="Resolução de Problemas"
           text={`
-              Meu principal objetivo é solucionar o problema principal que é exposto, 
-              da melhor forma possível,
-              usando tudo que estiver ao meu alcance.
+              Solucionar os diversos problemas que encontro com criatividade e qualidade é o principal.
             `}
         />
       </Flex>

@@ -22,6 +22,12 @@ export const Posts = styled.div`
   }
 
   .blog-content {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    border: 1px solid red;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -29,7 +35,7 @@ export const Posts = styled.div`
 
     padding: 2rem;
 
-    > h1 {
+    .blog-title {
       color: var(--cyan-500);
       font: 500 1.6rem 'Montserrat', sans-serif;
       margin-top: 4rem;
@@ -40,7 +46,7 @@ export const Posts = styled.div`
       }
     }
     
-    > p {
+    .blog-subtitle {
       font: 200 1.1rem 'Nunito', sans-serif;
       margin-top: 1rem;
       z-index: 100;
@@ -48,12 +54,15 @@ export const Posts = styled.div`
   }
 
   .posts {
-    width: 100%;
-    gap: 2rem;
+    width: 100% !important;
     margin-top: ${theme.spacing.size(2)};
     z-index: 100;
-    ${theme.row.centerStart};
-    ${theme.padding.vertical.p1};
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 30px;
+    row-gap: 20px;
+    justify-content: space-between;
   }
 
   .footer-copyright {
@@ -75,7 +84,7 @@ export const Posts = styled.div`
     }
   }
   
-  @media (min-width: 320px) and (max-width: 968px) {
+  @media (min-width: 220px) and (max-width: 968px) {
     .container {
       .illustration {
         display: none;
@@ -86,22 +95,34 @@ export const Posts = styled.div`
         height: auto;
       }
     }
+  }
 
+  @media (min-width: 686px) and (max-width: 968px) {
     .posts {
-      width: 100%;
-      ${theme.column.centerStart};
-      ${theme.padding.vertical.p1};
+      width: 100% !important;
+      ${theme.padding.vertical.p1}
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media (min-width: 120px) and (max-width: 685px) {
+    .posts {
+      width: 100% !important;
+      ${theme.padding.vertical.p1}
+      grid-template-columns: auto;
     }
   }
 `
 
 export const Post = styled.div`
-  min-width: 18rem;
-  max-width: 22rem;
-  min-height: 12rem;
+  /* min-width: 18rem; */
+  /* max-width: 22rem; */
+  /* min-height: 12rem; */
+  max-width: 400px;
+  height: 25rem;
+  padding-bottom: 1rem;
 
   opacity: 0.8;
-  padding-bottom: 1rem;
   background: var(--gray-700);
   border-top-width: 3px;
   border-radius: ${postBorder}px;
@@ -114,12 +135,10 @@ export const Post = styled.div`
   justify-content: space-between;
   gap: 1.2rem;
 
-  transition: 1s;
-  transition: 0.2s margin-top;
+  transition: 0.6s;
 
   &:hover {
     opacity: 1;
-    margin-top: -2px;
   }
 
   img {
@@ -133,16 +152,21 @@ export const Post = styled.div`
   .content {
     width: 100%;
     height: 100%;
-    padding: 0 1.2rem 0 1.2rem;
+    padding: 1rem 1.2rem 0 1.2rem;
     gap: 0.75rem;
-    ${theme.column.startStart}
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 
     h1 {
+      overflow: hidden;
       font: 500 1.2rem 'Montserrat', sans-serif;
     }
 
     p {
-      height: 7rem;
+      height: 5rem;
+      max-height: 5rem;
       font: 500 1rem 'Nunito', sans-serif;
       line-height: 1.2rem;
       overflow: hidden;
@@ -164,5 +188,12 @@ export const Post = styled.div`
 
       &:hover { text-decoration: underline; }
     }
-  } 
+  }
+
+  @media (min-width: 120px) and (max-width: 685px) {
+    & {
+      width: 100%;
+      max-width: none;
+    }
+  }
 `;

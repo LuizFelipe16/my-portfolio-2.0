@@ -7,6 +7,6 @@ interface TitlePageProps {
 
 export const TitlePage = ({ t: titlePage }: TitlePageProps) => {
   return (
-    <Head><title>{appVariables.nameProject} | {titlePage}</title></Head>
+    <Head><title>{titlePage} | {appVariables.nameProject}</title></Head>
   );
 }

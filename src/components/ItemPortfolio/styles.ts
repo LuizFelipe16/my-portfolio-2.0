@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ItemPortfolioStyle = styled.div`
   width: 25rem;
-  min-height: 25rem;
+  min-height: 28rem;
   height: auto;
 
   padding: 1rem;

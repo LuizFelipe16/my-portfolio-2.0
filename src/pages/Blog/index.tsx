@@ -29,7 +29,7 @@ export default function PageBlog() {
           icon='/icons/code.png'
           title='Programação' 
           description='Conteúdo épico sobre o universo da programação'
-          href='/posts/programacao'
+          href='/posts/web-react'
           onClick={() => setIsLoading(true)}
         />
         <ItemSpace 

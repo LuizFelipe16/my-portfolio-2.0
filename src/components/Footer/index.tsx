@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { Stack, Text, Heading, VStack, Button, Flex, Image, useBreakpointValue, Tooltip } from "@chakra-ui/react";
+import { Stack, Text, Heading, VStack, Button, Flex, Image, useBreakpointValue, Tooltip, Icon, HStack } from "@chakra-ui/react";
 import { scrollAnimationToSessionPageById } from "../../utils/scrollAnimationToSessionPageById";
 
 import { Textarea } from "../Form/AreaText";
@@ -7,6 +7,8 @@ import { Input } from "../Form/Input";
 
 import { Link } from './styles';
 import { FooterBlog } from "./FooterBlog";
+import { Settings } from "../../_app/Settings";
+import { FaCopyright, FaRegCopyright } from "react-icons/fa";
 
 type FooterProps = {
   isNotContact?: boolean;
@@ -32,7 +34,7 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
     const message = body.split(" ").join("%20");
 
     const link =
-      `https://api.whatsapp.com/send?phone=5519989522121&text=${message}`;
+      `https://api.whatsapp.com/send?phone=5519992169073&text=${message}`;
 
     window.location.href = link;
   }
@@ -186,7 +188,7 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             </Text>
             <Text 
               as="a" 
-              href="https://github.com/LuizFelipe16" 
+              href={Settings.Networks.Github}
               target="_blank"
               transition='0.2s'
               _hover={{ color: 'primaryColor.500' }}
@@ -195,7 +197,7 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             </Text>
             <Text 
               as="a" 
-              href="https://www.instagram.com/luiz_2fs/" 
+              href={Settings.Networks.Instagram}
               target="_blank"
               transition='0.2s'
               _hover={{ color: 'primaryColor.500' }}
@@ -223,7 +225,7 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             >
               Entre em Contato
             </Heading>
-            <Text>(19) 98952 2121</Text>
+            <Text>(19) 99216 9073</Text>
             <Text>felipefelizatti215@gmail.com</Text>
           </VStack>
 
@@ -245,14 +247,26 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
       {!isBlog && (
         <Flex
           w="100vw"
-          h="8vh"
+          h={['24vh', '20vh', '14vh']}
           zIndex={10}
-          bg="cyan.500"
+          bg="gray.800"
+          direction={['column', 'column', 'row']}
           align="center"
-          justify="center"
+          justify={['center', 'space-between', 'space-between']}
+          gap={4}
+          py={6}
+          px={[6, 8, 16]}
           className="footer-copyright"
+          fontFamily="JetBrains Mono"
+          fontWeight="700" 
+          color="cyan.500"
+          fontSize="md"
         >
-          <Text fontFamily="JetBrains Mono" fontWeight="700" color="gray.900" fontSize="sm">created by @LuizFelipe | 2022</Text>
+          <HStack justify='center' align='center'>
+            <Icon as={FaRegCopyright} />
+            <Text>luizcode.com.br | 2022</Text>
+          </HStack>
+          <Text>Powered by Luiz Code</Text>
         </Flex>
       )}
 

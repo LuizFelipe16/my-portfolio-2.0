@@ -53,14 +53,14 @@ export const ViewHeader = styled.div`
         height: 100vh;
         opacity: 0.1;
         object-fit: cover;
-
-        /* display: none; */
       }
       
       .content {
         width: 100%;
         height: auto;
         
+        margin-top: 4rem;
+        margin-bottom: 8rem;
         padding: 2rem;
 
         h1 {

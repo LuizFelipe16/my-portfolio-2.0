@@ -43,8 +43,8 @@ function PagePost({ post }: PostProps) {
       />
     );
   }
-  
-  if (!!isLoading) return <Loading />;
+
+  if (!!isLoading) return <Loading text='Carregando Conteúdo...' />;
 
   return (
     <Post>
@@ -59,7 +59,7 @@ function PagePost({ post }: PostProps) {
           <Divider style='divider' />
           <View style='post_information'>
             <h2><FaUserAlt /> {post.data.author}</h2>
-            <time><BsCalendar2WeekFill /> {post.first_publication_date}</time>
+            <time><BsCalendar2WeekFill /> {post?.first_publication_date}</time>
           </View>
 
           {post.data.content.map(content => (
@@ -69,6 +69,7 @@ function PagePost({ post }: PostProps) {
                 className='postContent'
                 dangerouslySetInnerHTML={{ __html: content.body }}
               />
+              <img src={content.thumb.url} alt={content.thumb.alt} />
             </div>
           ))}
         </View>
@@ -94,11 +95,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const prismic = getPrismicClient();
 
   const { id } = params as any;
+  const [postId, postType] = id.split('&');
 
-  const response = await prismic.getByUID('post', String(id), {});
+  const response = await prismic.getByUID(postType, String(postId), {});
 
   const post = {
-    first_publication_date: new Date(String(response.first_publication_date)).toLocaleDateString('pt-BR', {
+    first_publication_date: new Date(String(response?.first_publication_date)).toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: 'long',
       year: 'numeric'
@@ -112,9 +114,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       subtitle: response.data.subtitle,
       author: response.data.author,
       content: response.data.content.map((content: any) => {
+        console.log(content)
         return {
           heading: content.heading,
-          body: RichText.asHtml(content.body)
+          body: RichText.asHtml(content.body),
+          thumb: {
+            url: content.thumb.url,
+            alt: content.thumb.alt,
+          },
         }
       })
     }

@@ -12,7 +12,7 @@ import { Footer, Loading } from '../../components';
 import { Interactive3DElement, Link, Text, TitlePage, View } from '../../_app';
 
 import { Posts, Post } from '../../styles/pages/Posts';
-import { Button, Icon, Spinner } from '@chakra-ui/react';
+import { Button, Icon, Spinner, useBreakpointValue, VStack } from '@chakra-ui/react';
 import { MyParticles } from '../../components/MyParticles';
 import { Navigation } from '../../components/Posts';
 
@@ -29,39 +29,78 @@ function PagePosts({ postsPagination }: PostsProps) {
   const { query } = useRouter() as RouterCategories;
   const [isLoading, setIsLoading] = useState(true);
 
-  const category = query?.category == 'programacao' ? 'Programação' : 'Design';
+  const isMobileVersion = useBreakpointValue({
+    base: true,
+    md: false,
+    sm: false,
+    lg: false,
+    xl: false,
+  });
 
-  useEffect(() => { setTimeout(() => setIsLoading(false), 1000) }, []);
+  const titleLenght = isMobileVersion ? 40 : 45;
+  const descriptionLenght = isMobileVersion ? 100 : 150;
 
-  if (!!isLoading) return <Loading />;
+  const reduceString = (s: string, lenght: number) => {
+    const lengthString = s.length
+    const newString = lengthString > lenght ? `${s.slice(0, lenght).trimEnd()}...` : s;
+    return newString;
+  }
+
+  useEffect(() => { 
+    if (isLoading) {
+      setTimeout(() => setIsLoading(false), 500)
+    }
+  }, [isLoading]);
+
+  if (!!isLoading) return <Loading text='Carregando Postagens...' />;
 
   return (
     <Posts>
-      <TitlePage t={`Posts ${category}`} />
+      <TitlePage t={`Posts Programação`} />
 
       <MyParticles opacity={0.1} id='bgParticlesPageBlog' />
 
-      <Navigation />
+      <Navigation category={query?.category} />
 
       <View className='blog-content'>
-        <h1>
-          <Icon className='icon' as={BsFillFileEarmarkCodeFill} color="cyan.500" fontSize={["1.2rem", "1.3rem", "1.4rem"]} />
-          Bem vindo
-        </h1>
-        <Text text={`Conteúdos gerais sobre ${category}`} />
+        <VStack align={'flex-start'} spacing={2}>
+          <h1 className='blog-title'>
+            <Icon className='icon' as={BsFillFileEarmarkCodeFill} color="cyan.500" fontSize={["1.2rem", "1.3rem", "1.4rem"]} />
+            {postsPagination.results.length < 1 
+              ? 'Ops...'
+              : 'Hey, hora de codar!'
+            }
+          </h1>
+          <Text style='blog-subtitle' text={
+            postsPagination.results.length < 1 
+              ? 'Não encontramos nenhum post aqui'
+              : 'Confira os vários conteúdos sobre Programação'
+            } 
+          />
+        </VStack>
 
         <View type='main' style='posts'>
-          {postsPagination.results.map(post => (
-            <Post key={post.uid}>
-              <img src={post.data.banner.url} alt={post.data.title} />
+          {postsPagination.results.map(post => {
+            const title = reduceString(post.data.title, titleLenght)
+            const description = reduceString(post.data.description, descriptionLenght)
 
-              <View style='content'>
-                <Text type='h1' text={post.data.title} />
-                <Text text={post.data.description} />
-                <Link href={`/posts/post/${post.uid}`}><a>Ver Post</a></Link>
-              </View>
-            </Post>
-          ))}
+            return (
+              <Post key={post.uid}>
+                <img src={post.data.banner.url} alt={post.data.title} />
+  
+                <View style='content'>
+                  <Text type='h1' text={title} />
+                  <Text text={description} />
+                  <Link href={{
+                    pathname: `/posts/post/${post.uid}&${post.type}`,
+                    query: { id: post.uid, type: post.type },
+                  }}>
+                    <a>Ver Post</a>
+                  </Link>
+                </View>
+              </Post>
+            )
+          })}
         </View>
       </View>
 
@@ -77,18 +116,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const prismic = getPrismicClient();
 
+  const { category } = params as any;
+
   const postsResponse = await prismic.query([
-    Prismic.Predicates.at('document.type', 'post')
+    Prismic.Predicates.at('document.type', !category ? 'web-react' : category),
   ], {
     pageSize: 20
   });
 
-  const posts = postsResponse?.results?.map(post => {
+  const posts = postsResponse.results?.map(post => {
     return {
       uid: post.uid,
+      type: post.type,
       first_publication_date: new Date(String(post.first_publication_date)).toLocaleDateString('pt-BR', {
         day: '2-digit',
         month: 'long',

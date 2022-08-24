@@ -7,6 +7,7 @@ import { IoMdClose } from 'react-icons/io';
 import { AiFillLinkedin, AiOutlineInstagram, AiFillGithub } from 'react-icons/ai';
 
 import { MenuTools } from "./styles";
+import { Settings } from "../../_app/Settings";
 
 interface IMenuButtonProps {
   isMenuOpen?: boolean;
@@ -23,7 +24,7 @@ export function MenuButtons({ isMenuOpen = false }: IMenuButtonProps) {
           <>
             <Button
               as="a"
-              href="https://github.com/LuizFelipe16"
+              href={Settings.Networks.Github}
               target="_blank"
               className="button-tool"
               boxShadow="lg"
@@ -33,7 +34,7 @@ export function MenuButtons({ isMenuOpen = false }: IMenuButtonProps) {
 
             <Button
               as="a"
-              href="https://www.instagram.com/luiz_2fs/"
+              href={Settings.Networks.Instagram}
               target="_blank"
               className="button-tool"
               boxShadow="lg"

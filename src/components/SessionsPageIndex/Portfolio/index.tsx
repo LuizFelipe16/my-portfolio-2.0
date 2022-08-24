@@ -16,7 +16,7 @@ export function SessionPortfolio() {
           Meu Portfólio
         </h1>
         <h2>
-          minha experiência de anos fazendo o que mais gosto
+          melhores projetos já criados
         </h2>
       </div>
       <div className="portfolios">

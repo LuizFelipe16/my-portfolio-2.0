@@ -56,9 +56,9 @@ export function SidebarNav() {
               >
                 <ItemSidebarNav href="about" text="QUEM SOU" />
                 <ItemSidebarNav href="services" text="O QUE FAÇO" />
-                <ItemSidebarNav href="portfolio" text="PORTFÓLIO" />
+                <ItemSidebarNav href="portfolio" text="PROJETOS" />
                 <ItemSidebarNav href="contact" text="FALE COMIGO" />
-                <ItemSidebarNav isPage href="posts/programacao" text="BLOG" />
+                <ItemSidebarNav isPage href="posts/web-react" text="BLOG" />
               </VStack>
             </DrawerBody>
           </DrawerContent>
