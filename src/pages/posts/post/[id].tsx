@@ -10,12 +10,14 @@ import { TitlePage, View, Text, Divider } from '../../../_app';
 import { PostData } from '../../../types';
 
 import { Post } from '../../../styles/pages/Post';
+import { useTheme } from '../../../contexts';
 
 interface PostProps {
   post: PostData;
 }
 
 function PagePost({ post }: PostProps) {
+  const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => { setTimeout(() => setIsLoading(false), 500) }, []);
@@ -47,7 +49,7 @@ function PagePost({ post }: PostProps) {
   if (!!isLoading) return <Loading text='Carregando Conteúdo...' />;
 
   return (
-    <Post>
+    <Post theme={theme}>
       <TitlePage t={post.data.title} />
       <OptionsButtons />
       <HeaderPost banner={post.data.banner.url} headline={post.data.title} description={post.data.description} />

@@ -11,6 +11,7 @@ export const ViewHeader = styled.div`
 
   > .banner {
     width: 100%;
+    height: 100vh;
     opacity: 0.3;
     position: absolute;
     object-fit: cover;
@@ -50,7 +51,7 @@ export const ViewHeader = styled.div`
 
       .banner {
         width: 100%;
-        height: 100vh;
+        height: 140vh;
         opacity: 0.1;
         object-fit: cover;
       }

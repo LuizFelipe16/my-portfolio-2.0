@@ -10,12 +10,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 12,
+    access: true,
+    title: 'MyLook',
+    banner: 'mylook.png',
+    link: 'https://my-look.vercel.app',
+    // github: 'https://github.com/LuizFelipe16/codeleap-app',
+    description: `
+      Em desenvolvimento...
+    `,
+  },
+  {
     id: 1,
     title: 'MyMoon',
     banner: 'my-moon.png',
     github: 'https://github.com/LuizFelipe16/my-moon',
     description: `
-      O projeto mais complexo e completo que já desenvolvi, lidei com o máximo de bibliotecas que aprendi 
+      Um projeto completo, durante o desenvolver lidei com o máximo de bibliotecas que aprendi 
       durante o programa Ignite da Rocketseat, me importando muito com o código e a organização do projeto por conta de
       sua complexidade. 
       O propósito principal dele é ser uma plataforma para as pessoas entrarem e criarem listas de tarefas noturnas 
@@ -101,6 +112,19 @@ export const projects: Project[] = [
       pouco de Sass para algumas estilizações.
     `,
     access: true
+  },
+  {
+    id: 14,
+    access: true,
+    title: 'MyStarbucks',
+    banner: 'mystarbucks.png',
+    link: 'https://mystarbucks.vercel.app',
+    github: 'https://github.com/LuizFelipe16/my-starbucks',
+    description: `
+      Projeto simples de reimaginação do site Starbucks. No desenvolvimento utilizei TypeScript, com ReactJS, NextJS, o
+      design system ChakraUI, para os carrosséis foi usado Swiper, a estilização foi feita com Sass e as animações
+      com AnimateOnScrollLib.
+    `,
   },
   {
     id: 6,
@@ -203,5 +227,20 @@ export const projects: Project[] = [
       testing library, entre outras funcionalidades.
     `,
   },
+  {
+    id: 13,
+    access: true,
+    title: 'MyClock',
+    banner: 'myclock.png',
+    link: 'https://myclock-chi.vercel.app',
+    // github: 'https://github.com/LuizFelipe16/codeleap-app',
+    description: `
+      Simples e direto, apenas um relógio digital minimalista que eu, particularmente precisava e não achava
+      algo simples como isso na web.
+      Para incrementar o projeto, adicionei responsividade com outros devices e à possibilidade de trocar o tema do app.
+      No quesito desenvolvimento, utilizei TypeScript, com ReactJS e NextJS, além da minha própria Lib com componentes
+      pré customizados para agilizar o desenvolvimento e minha
+      própria estilização (esse projeto serviu de teste para isso) chamada MyStyles que uso em meus projetos.
+    `,
+  },
 ];
-

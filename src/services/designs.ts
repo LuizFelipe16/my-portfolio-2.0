@@ -8,6 +8,12 @@ type Design = {
 
 export const designs: Design[] = [
   {
+    id: 45,
+    title: 'Cardápio Hamburgueria',
+    banner: 'card-hamb.png',
+    size: 'large'
+  },
+  {
     id: 1,
     title: 'Criativo Disk Pizza',
     banner: 'disk-pizza.png',
@@ -254,6 +260,24 @@ export const designs: Design[] = [
     size: 'normal'
   },
   {
+    id: 46,
+    title: 'Post Carrossel Instagram Saiba que Ninguém verá seu Conteúdo se...',
+    banner: 'cn-saiba-ninguem.png',
+    size: 'normal'
+  },
+  {
+    id: 47,
+    title: 'Post Carrossel Instagram Saiba que seu Negócio...',
+    banner: 'cn-saiba-negocio.png',
+    size: 'normal'
+  },
+  {
+    id: 48,
+    title: 'Post Carrossel Instagram Poderoso Chefe',
+    banner: 'cn-poderoso-chefe.png',
+    size: 'normal'
+  },
+  {
     id: 42,
     title: 'Logo Pizzaria Don',
     banner: 'logo-don.png',
@@ -266,6 +290,12 @@ export const designs: Design[] = [
     size: 'normal'
   },
   {
+    id: 49,
+    title: 'Logo RLD',
+    banner: 'logo-rld.png',
+    size: 'normal'
+  },
+  {
     id: 43,
     title: 'Criativo Construção Já',
     banner: 'construcao.png',
@@ -275,6 +305,12 @@ export const designs: Design[] = [
     id: 44,
     title: 'Criativo Rodízio',
     banner: 'rodizio.jpeg',
+    size: 'normal'
+  },
+  {
+    id: 48,
+    title: 'Criativo XForce',
+    banner: 'xforce-veja.png',
     size: 'normal'
   },
 ];

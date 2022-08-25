@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { styledPresets } from '../../_app';
 
 export const Post = styled.div`
@@ -15,8 +15,14 @@ export const Post = styled.div`
     min-height: 30rem;
 
     padding: 5rem 1.5rem 5rem 1.5rem;
-    background: var(--gray-900);
-    color: var(--white);
+    
+    ${props => props.theme === 'dark' ? css`
+      color: var(--white);
+      background: var(--gray-900);
+      `: css`
+      color: var(--gray-900);
+      background: var(--gray-100);
+    `}
 
     display: flex;
     gap: 2rem;
@@ -27,35 +33,58 @@ export const Post = styled.div`
     .post_content {
       width: 80%;
       min-height: 30rem;
-      color: var(--cyan-500);
       padding: 3.5rem 3.2rem;
       border-radius: 0.8rem;
-      background: var(--gray-900);
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+      
       margin-top: -8rem;
       z-index: 10;
       ${styledPresets.column.startStart}
       gap: 1.2rem;
+      
+      ${props => props.theme === 'dark' ? css`
+        color: var(--cyan-500);
+        background: var(--gray-900);
+        `: css`
+        color: var(--gray-900);
+        background: var(--gray-100);
+      `}
 
       .post_title {
-        color: var(--cyan-500);
         font: 600 2.5rem 'Montserrat', sans-serif;
+        
+        ${props => props.theme === 'dark' ? css`
+          color: var(--cyan-500);
+          `: css`
+          color: var(--gray-900);
+        `}
       }
 
       .post_subtitle {
-        color: var(--white);
-        font: 400 1.2rem 'Montserrat', sans-serif;
+        font: 500 1.1rem 'Montserrat', sans-serif;
         margin-bottom: 1.6rem;
+        margin-top: 1rem;
+        line-height: 1.5;
+        
+        ${props => props.theme === 'dark' ? css`
+          color: var(--white);
+          `: css`
+          color: var(--gray-600);
+        `}
       }
 
       > hr {
         width: 100%;
         height: 0.2rem;
-        background: var(--cyan-500);
         opacity: 0.2;
         border-radius: 100%;
         border: none;
+        
+        ${props => props.theme === 'dark' ? css`
+          background: var(--cyan-500);
+          `: css`
+          background: var(--gray-900);
+        `}
       }
 
       .post_information {
@@ -67,8 +96,13 @@ export const Post = styled.div`
         align-items: center;
         justify-content: space-between;
 
-        color: var(--cyan-500);
         font: 300 1rem 'Montserrat', sans-serif;
+        
+        ${props => props.theme === 'dark' ? css`
+          color: var(--cyan-500);
+        `: css`
+          color: var(--gray-900);
+        `}
 
         > h2 {
           ${styledPresets.centerRow}
@@ -91,10 +125,15 @@ export const Post = styled.div`
         margin-top: 2rem;
     
         > h1 {
-          color: var(--white);
           font: bold 1.7rem 'Montserrat';
     
           margin-bottom: 1.35rem !important;
+
+          ${props => props.theme === 'dark' ? css`
+            color: var(--white);
+          `: css`
+            color: var(--gray-900);
+          `}
         }
 
         > img {
@@ -106,7 +145,6 @@ export const Post = styled.div`
         }
     
         .postContent {
-          color: var(--white);
           display: flex;
           flex-direction: column;
           gap: 1.25rem;
@@ -114,6 +152,12 @@ export const Post = styled.div`
           font-family: 'Montserrat';
           text-align: justify;
           font-size: 1.1rem;
+
+          ${props => props.theme === 'dark' ? css`
+            color: var(--white);
+          `: css`
+            color: var(--gray-900);
+          `}
         }
       }
     }

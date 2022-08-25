@@ -7,7 +7,7 @@ export const MenuTools = styled.div`
   bottom: 2rem;
   right: 0.5rem;
   
-  z-index: 1000;
+  z-index: 10000000;
   position: fixed;
 
   gap: 0.8rem;

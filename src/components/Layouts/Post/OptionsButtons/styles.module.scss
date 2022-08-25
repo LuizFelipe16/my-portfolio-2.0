@@ -28,6 +28,12 @@
   }
 }
 
+.switch_theme {
+  display: none !important;
+  top: 15px !important;
+  left: 70px !important;
+}
+
 .options_post_link {
   left: 0;
   top: 28%;
@@ -43,11 +49,16 @@
   top: 38%;
 }
 
+.options_theme {
+  left: 0;
+  top: 48%;
+}
+
 .options_post {
   width: auto;
   height: auto;
 
-  padding: 0.6rem;
+  padding: 0.8rem 0.8rem 0.8rem 0.6rem;
   z-index: 10000;
   position: fixed;
 
@@ -72,6 +83,10 @@
 @media (min-width: 200px) and (max-width: 968px) {
   .options_post {
     display: none;
+  }
+  
+  .switch_theme {
+    display: flex !important;
   }
   
   .back_page {
