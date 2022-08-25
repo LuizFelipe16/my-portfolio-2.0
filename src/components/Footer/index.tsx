@@ -266,7 +266,7 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             <Icon as={FaRegCopyright} />
             <Text>luizcode.com.br | 2022</Text>
           </HStack>
-          <Text>Powered by Luiz Code</Text>
+          <Text>Powered by {Settings.Site.Name}</Text>
         </Flex>
       )}
 
