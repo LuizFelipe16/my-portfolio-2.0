@@ -40,7 +40,7 @@ export function ItemService({ mt, title, text, icon, animatedFor }: IItemService
       <Tilt 
         tiltEnable={animated} 
         scale={animated ? 1.05 : 1} 
-        glarePosition={animated ? 'all' : null}
+        glarePosition={animated ? 'all' : undefined}
         glareEnable={animated} 
         glareColor='#48CDD0' 
         glareMaxOpacity={0.09}
