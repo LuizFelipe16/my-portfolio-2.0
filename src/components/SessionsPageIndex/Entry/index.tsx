@@ -16,6 +16,8 @@ export function SessionEntry() {
   const [isLoadingElements, setIsLoadingElements] = useState(true);
   const textTyping = useRef(null);
 
+  const timeout = useRef<any>(null)
+
   const isMobileVersion = useBreakpointValue({
     base: true,
     lg: false,
@@ -28,6 +30,10 @@ export function SessionEntry() {
 
   useEffect(() => {
     AppStatus.set('loading')
+    timeout.current = setTimeout(() => {
+      setIsLoadingElements(false)
+          AppStatus.set('done')
+    }, 15000)
   }, [])
 
   useEffect(() => {
