@@ -27,9 +27,7 @@ export const Entry = styled.main`
     width: 60%;
     height: 100vh;
 
-    overflow: hidden;
     background-color: transparent !important;
-    touch-action: none;
     position: absolute;
     right: 0;
     top: 0;
