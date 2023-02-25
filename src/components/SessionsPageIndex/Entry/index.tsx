@@ -33,7 +33,7 @@ export function SessionEntry() {
     timeout.current = setTimeout(() => {
       setIsLoadingElements(false)
           AppStatus.set('done')
-    }, 15000)
+    }, 7000)
   }, [])
 
   useEffect(() => {
