@@ -26,9 +26,13 @@ export const TecSkillsStyles = styled.div`
   }
 
   .swiper-pagination {
+    flex: 1;
     position: absolute;
-    left: 45%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     transition: 300ms opacity;
     transform: translate3d(0, 0, 0);
     z-index: 1000;
@@ -74,7 +78,46 @@ export const TecSkillsStyles = styled.div`
     }
   }
 
-  @media (min-width: 200px) and (max-width: 980px) {
+  @media (min-width: 768px) and (max-width: 1000px) {
+    & {
+      justify-content: center;
+      align-items: center;
+      gap: 0 !important;
+
+      .swiper-skills {
+        width: 100%;
+        padding-left: 0;
+        padding-bottom: 0;
+        margin-top: 2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .swiper-content-item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .item {
+        align-self: center;
+        justify-self: center;
+        /* margin-left: 3rem; */
+        margin-bottom: 2rem;
+
+        .icon {
+          width: 7.5rem;
+          height: 7.5rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 200px) and (max-width: 768px) {
     & {
       padding: 0;
       justify-content: center;
@@ -110,15 +153,6 @@ export const TecSkillsStyles = styled.div`
           width: 10rem;
           height: 10rem;
         }
-      }
-
-      .swiper-pagination {
-        position: absolute;
-        left: 10%;
-        text-align: center;
-        transition: 300ms opacity;
-        transform: translate3d(0, 0, 0);
-        z-index: 1000;
       }
     }
   }

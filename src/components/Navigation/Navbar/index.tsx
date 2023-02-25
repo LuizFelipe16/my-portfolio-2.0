@@ -10,12 +10,12 @@ export function Navbar() {
       h="auto"
       position="absolute"
       top="0"
-      left={valueLeftContentTexts}
+      pl={valueLeftContentTexts}
       py="12"
 
       // boxShadow="dark-lg"
       textShadow="dark-lg"
-      zIndex="100000"
+      zIndex="999"
 
       // background="primaryGray.1"
       // borderBottomColor="cyan.500"

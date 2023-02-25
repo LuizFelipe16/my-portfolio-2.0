@@ -24,7 +24,7 @@ export function ModalViewDesign({ isOpen, onClose, design }: IModalViewProjectPr
   return (
     <Modal isCentered isOpen={isOpen} onClose={onClose} size="md">
       <ModalOverlay />
-      <ModalContent bg="gray.900" color="gray.100">
+      <ModalContent bg="gray.900" color="gray.100" pt='4' pb='2'>
         <ModalBody>
           <Flex w="100%" align="center" justify="center">
             <Image

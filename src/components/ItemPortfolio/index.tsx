@@ -1,4 +1,4 @@
-import { Button, Image, useDisclosure } from '@chakra-ui/react';
+import { Button, GridItem, Image, useDisclosure } from '@chakra-ui/react';
 import { Project } from '../../services';
 import { ModalViewProject } from '../Modal/ViewProject';
 import { ItemPortfolioStyle } from './styles';
@@ -15,6 +15,7 @@ export function ItemPortfolio({ project, animation, dur }: IItemPortfolioProps) 
 
   return (
     <>
+      <GridItem>
       <ItemPortfolioStyle
         data-aos={animation}
         data-aos-duration={dur}
@@ -43,6 +44,7 @@ export function ItemPortfolio({ project, animation, dur }: IItemPortfolioProps) 
           Ver Completo
         </Button>
       </ItemPortfolioStyle>
+      </GridItem>
       <ModalViewProject isOpen={isOpen} onClose={onClose} project={project} />
     </>
   );

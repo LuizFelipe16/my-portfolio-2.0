@@ -3,9 +3,11 @@ import styled from 'styled-components';
 export const Welcome = styled.main`
   width: 100vw;
   min-height: 100vh;
+  max-width: 100vw;
   
   background-image: url('/images/home3-bg.png');
   object-fit: cover;
+  background-repeat: no-repeat;
 
   position: relative;
 

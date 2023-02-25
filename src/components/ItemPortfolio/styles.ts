@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const ItemPortfolioStyle = styled.div`
-  width: 25rem;
+  /* width: 25rem; */
+  flex: 1;
   min-height: 28rem;
   height: auto;
 

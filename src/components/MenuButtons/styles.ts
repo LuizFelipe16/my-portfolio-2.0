@@ -4,7 +4,7 @@ export const MenuTools = styled.div`
   width: 5rem;
   height: auto;
 
-  bottom: 2rem;
+  bottom: 4rem;
   right: 0.5rem;
   
   z-index: 10000000;
@@ -15,6 +15,11 @@ export const MenuTools = styled.div`
   align-items: center;
   justify-content: center;
 
+  .menu-tools {
+    display: flex;
+    flex-direction: column;
+  }
+
   .button-tool {
     width: 3rem;
     height: 3rem;
@@ -23,14 +28,16 @@ export const MenuTools = styled.div`
     color: var(--gray-900);
 
     border-radius: 100%;
-
-    animation: menu_open 1s normal both;
     transition: 0.2s;
 
     &:hover {
       background-color: var(--cyan-500);
       filter: brightness(0.9);
     }
+  }
+
+  .animated-tool {
+    animation: menu_open 1s normal both;
   }
 
   @keyframes menu_open {

@@ -9,12 +9,13 @@ import { getPrismicClient } from '../../services';
 
 import type { PostData, RouterCategories } from '../../types';
 import { Footer, Loading } from '../../components';
-import { Interactive3DElement, Link, Text, TitlePage, View } from '../../_app';
+import { Link, Text, TitlePage, View } from '../../_app';
 
 import { Posts, Post } from '../../styles/pages/Posts';
-import { Button, Icon, Spinner, useBreakpointValue, VStack } from '@chakra-ui/react';
+import { Icon, useBreakpointValue, VStack } from '@chakra-ui/react';
 import { MyParticles } from '../../components/MyParticles';
 import { Navigation } from '../../components/Posts';
+import { useAppSelector } from '../../contexts';
 
 interface PostPagination {
   next_page: string;
@@ -23,11 +24,12 @@ interface PostPagination {
 
 interface PostsProps {
   postsPagination: PostPagination;
+  loading: boolean
 }
 
 function PagePosts({ postsPagination }: PostsProps) {
   const { query } = useRouter() as RouterCategories;
-  const [isLoading, setIsLoading] = useState(true);
+  const { AppStatus } = useAppSelector('AppStatus')
 
   const isMobileVersion = useBreakpointValue({
     base: true,
@@ -45,14 +47,6 @@ function PagePosts({ postsPagination }: PostsProps) {
     const newString = lengthString > lenght ? `${s.slice(0, lenght).trimEnd()}...` : s;
     return newString;
   }
-
-  useEffect(() => { 
-    if (isLoading) {
-      setTimeout(() => setIsLoading(false), 500)
-    }
-  }, [isLoading]);
-
-  if (!!isLoading) return <Loading text='Carregando Postagens...' />;
 
   return (
     <Posts>
@@ -93,9 +87,11 @@ function PagePosts({ postsPagination }: PostsProps) {
                   <Text text={description} />
                   <Link href={{
                     pathname: `/posts/post/${post.uid}&${post.type}`,
-                    query: { id: post.uid, type: post.type },
+                    query: { id: post.uid, type: post.type, category: post.data.title },
                   }}>
-                    <a>Ver Post</a>
+                    <a onClick={() => {
+                      AppStatus.set('loading')
+                    }}>Ver Post</a>
                   </Link>
                 </View>
               </Post>
@@ -150,7 +146,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       postsPagination: {
         next_page: postsResponse.next_page,
         results: posts
-      }
+      },
+      loading: false
     }
   }
 };

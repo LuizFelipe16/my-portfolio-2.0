@@ -10,17 +10,20 @@ import { TitlePage, View, Text, Divider } from '../../../_app';
 import { PostData } from '../../../types';
 
 import { Post } from '../../../styles/pages/Post';
-import { useTheme } from '../../../contexts';
+import { useAppSelector, useTheme } from '../../../contexts';
 
 interface PostProps {
   post: PostData;
 }
 
 function PagePost({ post }: PostProps) {
-  const { theme } = useTheme();
-  const [isLoading, setIsLoading] = useState(true);
+  const { Theme, AppStatus} = useAppSelector(['AppStatus', 'Theme'])
 
-  useEffect(() => { setTimeout(() => setIsLoading(false), 500) }, []);
+  useEffect(() => { 
+    if (AppStatus.is === 'loading') {
+      AppStatus.set('done')
+    }
+  }, []);
 
   function SectionComments() {
     return (
@@ -46,10 +49,8 @@ function PagePost({ post }: PostProps) {
     );
   }
 
-  if (!!isLoading) return <Loading text='Carregando Conteúdo...' />;
-
   return (
-    <Post theme={theme}>
+    <Post theme={Theme.theme}>
       <TitlePage t={post.data.title} />
       <OptionsButtons />
       <HeaderPost banner={post.data.banner.url} headline={post.data.title} description={post.data.description} />
@@ -64,8 +65,8 @@ function PagePost({ post }: PostProps) {
             <time><BsCalendar2WeekFill /> {post?.first_publication_date}</time>
           </View>
 
-          {post.data.content.map(content => (
-            <div key={content.heading} className='body_post'>
+          {post.data.content.map((content, i) => (
+            <div key={`${content.heading}-post-${i}`} className='body_post'>
               <h1>{content.heading}</h1>
               <div
                 className='postContent'
@@ -116,7 +117,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       subtitle: response.data.subtitle,
       author: response.data.author,
       content: response.data.content.map((content: any) => {
-        console.log(content)
         return {
           heading: content.heading,
           body: RichText.asHtml(content.body),
@@ -128,6 +128,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       })
     }
   }
+
+  // console.log(post.data.content)
 
   return {
     props: {

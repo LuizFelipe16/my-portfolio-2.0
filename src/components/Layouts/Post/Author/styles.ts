@@ -55,7 +55,40 @@ export const ViewAuthor = styled.div`
     }
   }
 
-  @media (min-width: 200px) and (max-width: 968px) {
+  @media (min-width: 100px) and (max-width: 750px) {
+    /* width: 80%; */
+    & {
+      width: 90%;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+
+      padding: 1rem;
+      padding-bottom: 2.5rem !important;
+      border-radius: 1rem;
+      box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      img {
+        margin-top: -3rem;
+        margin-left: 0;
+        border-radius: 1rem;
+      }
+
+      .social {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media (min-width: 751px) and (max-width: 968px) {
     & {
       /* width: 100%; */
       /* min-height: 20rem; */

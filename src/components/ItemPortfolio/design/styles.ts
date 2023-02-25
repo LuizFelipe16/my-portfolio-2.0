@@ -33,6 +33,7 @@ export const ItemPortfolioStyle = styled.div`
     
     &:hover {
       transform: scale(1.1);
+      border-radius: 1rem;
     }
   }
 

@@ -1,4 +1,4 @@
-import { Image, useDisclosure } from '@chakra-ui/react';
+import { GridItem, Image, useDisclosure } from '@chakra-ui/react';
 import { ModalViewDesign } from '../../Modal/ViewDesign';
 import { ItemPortfolioStyle } from './styles';
 
@@ -18,16 +18,18 @@ export function ItemPortfolioDesign({ design, animation, dur }: IItemPortfolioPr
 
   return (
     <>
-      <ItemPortfolioStyle
-        data-aos={animation}
-        data-aos-duration={dur}
-      >
-        <Image
-          className="img-design"
-          src={`/assets/designs/${design.banner}`}
-          onClick={onOpen}
-        />
-      </ItemPortfolioStyle>
+      <GridItem>
+        <ItemPortfolioStyle
+          data-aos={animation}
+          data-aos-duration={dur}
+        >
+          <Image
+            className="img-design"
+            src={`/assets/designs/${design.banner}`}
+            onClick={onOpen}
+          />
+        </ItemPortfolioStyle>
+      </GridItem>
 
       <ModalViewDesign
         design={design}

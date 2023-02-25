@@ -1,12 +1,15 @@
 import { Box, Heading, Icon, Stack, Text, Tooltip, VStack } from "@chakra-ui/react";
 import Link from "next/link";
-import { FaLongArrowAltLeft } from "react-icons/fa";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { AiFillHome } from 'react-icons/ai'
 
 interface IHeaderPortfolioProps {
   title: string;
+  nextPortfolio: string;
+  nextHref: string;
 }
 
-export function HeaderPortfolio({ title }: IHeaderPortfolioProps) {
+export function HeaderPortfolio({ title, nextPortfolio, nextHref }: IHeaderPortfolioProps) {
   return (
     <Stack
       w="100%"
@@ -40,7 +43,7 @@ export function HeaderPortfolio({ title }: IHeaderPortfolioProps) {
         >
           <Link href="/" passHref>
             <Icon
-              as={FaLongArrowAltLeft}
+              as={AiFillHome}
               fontSize="2xl"
             />
           </Link>
@@ -59,6 +62,36 @@ export function HeaderPortfolio({ title }: IHeaderPortfolioProps) {
           Continue rolando para baixo para ver mais
         </Text>
       </VStack>
+
+      <Tooltip hasArrow label={`Portfolio ${nextPortfolio}`} bg="gray.900" color="cyan.500" placement="bottom">
+        <Text
+          as="div"
+          w="auto"
+          h="auto"
+          p="3"
+          position="absolute"
+          right={["20px", "20px", "40px"]}
+          top={["20%", "20%", "45%"]}
+          cursor="pointer"
+          borderRadius="full"
+          transition="0.2s"
+          boxShadow="lg"
+          display="flex"
+          align="center"
+
+          _hover={{
+            bg: 'gray.900',
+            color: 'cyan.500'
+          }}
+        >
+          <Link href={nextHref} passHref>
+            <Icon
+              as={FaLongArrowAltRight}
+              fontSize="2xl"
+            />
+          </Link>
+        </Text>
+      </Tooltip>
     </Stack>
   );
 }

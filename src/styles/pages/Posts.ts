@@ -3,6 +3,10 @@ import { styledPresets as theme } from '../../_app';
 
 const postBorder = 12
 
+const deb = `
+  border: 1px solid red;
+`
+
 export const Posts = styled.div`
   width: 100vw;
   min-height: 120vh;
@@ -21,17 +25,19 @@ export const Posts = styled.div`
     cursor: pointer;
   }
 
+  .deb {
+    border: 1px solid red;
+  }
+
   .blog-content {
     width: 100%;
     height: 100%;
     min-height: 100vh;
 
-    border: 1px solid red;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     padding: 2rem;
 
@@ -119,8 +125,9 @@ export const Post = styled.div`
   /* max-width: 22rem; */
   /* min-height: 12rem; */
   max-width: 400px;
-  height: 25rem;
+  min-height: 25rem;
   padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
 
   opacity: 0.8;
   background: var(--gray-700);

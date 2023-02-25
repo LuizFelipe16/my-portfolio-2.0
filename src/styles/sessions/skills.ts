@@ -61,10 +61,11 @@ export const Skills = styled.div`
     }
   }
 
-  @media (min-width: 200px) and (max-width: 1100px) {
+  @media (min-width: 100px) and (max-width: 1200px) {
     & {
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding-top: 8rem;
 
       h1 {

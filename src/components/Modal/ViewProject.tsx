@@ -28,7 +28,7 @@ export function ModalViewProject({ isOpen, onClose, project }: IModalViewProject
   return (
     <Modal isCentered isOpen={isOpen} onClose={onClose} size="6xl">
       <ModalOverlay />
-      <ModalContent bg="gray.900" color="gray.100">
+      <ModalContent bg="gray.900" color="gray.100" maxWidth={'95%'}>
         <ModalHeader>
           <HStack spacing={2}>
             <Icon as={FaDesktop} ml="2" mt='1' fontSize="xl" color={'cyan.500'} />
@@ -44,7 +44,7 @@ export function ModalViewProject({ isOpen, onClose, project }: IModalViewProject
           </VStack>
         </ModalBody>
 
-        <ModalFooter fontFamily="Montserrat">
+        <ModalFooter fontFamily="Montserrat" gap={['4', '4', '0']} flexDirection={['column', 'column', 'row']}>
           {!!project?.github && (
             <Flex
               align="center"
@@ -56,8 +56,10 @@ export function ModalViewProject({ isOpen, onClose, project }: IModalViewProject
               bg="cyan.500"
               color="gray.900"
               fontWeight="600"
+              minHeight={'40px'}
               fontSize="sm"
               textAlign="center"
+              width={['100%', '100%', 'auto']}
 
               transition="0.2s"
               _hover={{
@@ -83,7 +85,9 @@ export function ModalViewProject({ isOpen, onClose, project }: IModalViewProject
               color="gray.900"
               fontWeight="600"
               fontSize="sm"
+              minHeight={'40px'}
               textAlign="center"
+              width={['100%', '100%', 'auto']}
 
               transition="0.2s"
               _hover={{
@@ -98,19 +102,40 @@ export function ModalViewProject({ isOpen, onClose, project }: IModalViewProject
             </Flex>
           )}
           <Button
-            color="gray.900"
+            // color="gray.900"
             onClick={onClose}
-            borderRadius="full"
-            fontFamily="Montserrat"
-            fontWeight="600"
-            fontSize="sm"
-            bg="cyan.500"
-            size="md"
-            transition="0.2s"
+            // borderRadius="full"
+            // fontFamily="Montserrat"
+            // fontWeight="600"
+            // width={['100%', '100%', 'auto']}
+            // fontSize="sm"
+            // bg="cyan.500"
+            // size="md"
+            // transition="0.2s"
 
-            _hover={{
-              bg: 'cyan.600'
-            }}
+            // _hover={{
+            //   bg: 'cyan.600'
+            // }}
+
+              align="center"
+              justify="center"
+              mr="4"
+              p="2"
+              px="4"
+              borderRadius="full"
+              bg="cyan.500"
+              color="gray.900"
+              fontWeight="600"
+              fontSize="sm"
+              textAlign="center"
+              width={['100%', '100%', 'auto']}
+              minWidth='100'
+              minHeight={'40px'}
+
+              transition="0.2s"
+              _hover={{
+                bg: 'cyan.600'
+              }}
           >
             Fechar
           </Button>

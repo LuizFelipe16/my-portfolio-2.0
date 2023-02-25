@@ -3,12 +3,14 @@ import styled from 'styled-components';
 export const Portfolio = styled.div`
   width: 100vw;
   min-height: 100vh;
+  max-width: 100vw;
   
   background-color: var(--gray-900);
 
   /* background-image: url('/images/services-bg.png'); */
   object-fit: cover;
   position: relative;
+  background-repeat: no-repeat;
 
   flex-direction: column;
   align-items: center;
@@ -38,8 +40,6 @@ export const Portfolio = styled.div`
   }
 
   .portfolios {
-    width: 100%;
-
     flex-direction: row;
     align-items: center;
     justify-content: center;

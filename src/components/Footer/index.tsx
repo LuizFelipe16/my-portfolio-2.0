@@ -45,8 +45,10 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
         <Stack
           id="contact"
           w="100vw"
+          maxW='100vw'
           minH="100vh"
           bg="gray.900"
+          bgRepeat={'no-repeat'}
           bgImage="/images/footer-bg.png"
           objectFit="cover"
           p={["5", "7", "8"]}
@@ -179,7 +181,7 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             </Heading>
             <Text 
               as="a" 
-              href="https://linkedin.com/in/luiz-felipe-siqueira-felizatti-00783a1ab/" 
+              href={Settings.Networks.Linkedin}
               target="_blank"
               transition='0.2s'
               _hover={{ color: 'primaryColor.500' }}

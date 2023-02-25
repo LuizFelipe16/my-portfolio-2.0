@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const ItemServiceStyle = styled.div`
-  width: 24rem;
+  width: '100%';
   height: 23rem;
+  min-height: 23rem;
 
   padding: 2rem;
   opacity: 0.8;

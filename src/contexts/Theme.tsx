@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect as onUpdate } from 'reac
 
 type Theme = 'dark' | 'light';
 
-type ThemeProviderData = {
+export type ThemeProviderData = {
   theme: Theme;
   getTheme: () => Theme;
   changeTheme: () => void;

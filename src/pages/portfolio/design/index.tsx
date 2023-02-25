@@ -1,4 +1,4 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { Grid, Stack, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
@@ -35,24 +35,27 @@ export default function PortfolioDesign() {
         align="center"
         justify="flex-start"
       >
-        <HeaderPortfolio title="Designs" />
+        <HeaderPortfolio title="Designs" nextPortfolio='Sites & Aplicações' nextHref='/portfolio/dev' />
 
         <ListFolders>
-          <ItemPortfolioProfile
-            img="cn-logo.png"
-            text="Perfil totalmente criado e planejado por mim: Branding, Identidade Visual,
-            Artes, Postagens únicas, Carrosseis, Stories, Site e etc."
-            link="https://www.instagram.com/cybernegocioscn/"
-          />
-
-          {designs.map(design => (
-            <ItemPortfolioDesign
-              key={design.id}
-              design={design}
-              animation="fade-right"
-              dur="1000"
+          <Grid templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={8}>
+            <ItemPortfolioProfile
+              img="cn-logo.png"
+              text="Perfil totalmente criado e planejado por mim: Branding, Identidade Visual,
+              Artes, Postagens únicas, Carrosseis, Stories, Site e etc."
+              link="https://www.instagram.com/cybernegocioscn/"
             />
-          ))}
+
+            {designs.map(design => (
+              <ItemPortfolioDesign
+                key={design.id}
+                design={design}
+                animation="fade-right"
+                dur="1000"
+              />
+            ))}
+          </Grid>
+          
         </ListFolders>
 
         <Text fontFamily="Montserrat" color="gray.200">Mais artes e designs estão sendo adicionados...</Text>

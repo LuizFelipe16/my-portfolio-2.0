@@ -3,12 +3,15 @@ import NLink from 'next/link';
 import { Text } from "../../../_app";
 import { Category } from "../../../types";
 import { Settings } from "../../../_app/Settings";
+import { useUpdateRouteQuery } from '../../../utils';
 
 type NavbarProps = {
   category: Category;
 };
 
 export function Navbar({ category }: NavbarProps) {
+  const { onNavigate } = useUpdateRouteQuery({ query: 'category' })
+
   return (
     <Navigation>
       <NLink href='/' passHref>
@@ -16,10 +19,10 @@ export function Navbar({ category }: NavbarProps) {
       </NLink>
       <hr className='nave-line' />
       <NLink href='/posts/web-react' passHref>
-        <Text className={`${category === 'web-react' && 'active'}`} text='Web' />
+        <Text onClick={onNavigate} className={`${category === 'web-react' && 'active'}`} text='Web' />
       </NLink>
       <NLink href='/posts/mobile-react-native' passHref>
-        <Text className={`${category === 'mobile-react-native' && 'active'}`} text='Mobile' />
+        <Text onClick={onNavigate} className={`${category === 'mobile-react-native' && 'active'}`} text='Mobile' />
       </NLink>
     </Navigation>
   );

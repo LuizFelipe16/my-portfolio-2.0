@@ -1,4 +1,4 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { Stack, Text, Grid } from "@chakra-ui/react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
@@ -35,17 +35,19 @@ export default function PortfolioDev() {
         align="center"
         justify="flex-start"
       >
-        <HeaderPortfolio title="Projetos Web" />
+        <HeaderPortfolio title="Projetos Web" nextPortfolio='Design' nextHref='/portfolio/design' />
 
         <ListFolders>
-          {projects.map(project => (
-            <ItemPortfolio
-              key={project.id}
-              project={project}
-              animation="fade-right"
-              dur="1000"
-            />
-          ))}
+          <Grid templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={8}>
+            {projects.map(project => (
+              <ItemPortfolio
+                key={project.id}
+                project={project}
+                animation="fade-right"
+                dur="1000"
+              />
+            ))}
+          </Grid>
         </ListFolders>
         <Text fontFamily="Montserrat" color="gray.200">Mais projetos estão sendo adicionados...</Text>
         <Footer />

@@ -1,7 +1,7 @@
 import { Icon, useBreakpointValue } from "@chakra-ui/react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-
 import { TecSkills } from "../../../components/TecSkills";
+import { Settings } from "../../../_app/Settings";
 
 import { About } from "./styles";
 
@@ -15,7 +15,7 @@ export function SessionAbout() {
     <About id="about">
       <div className="infos">
         <div className="flex-dir-column" data-aos="fade-down-right" data-aos-duration="1000">
-          <h2>Citação</h2>
+          <h2>Uma boa Citação</h2>
           <br />
           <p className="text-italic text-info">
             <Icon className="quote" color="#48CDD0" mr="2" as={FaQuoteLeft} />
@@ -27,26 +27,17 @@ export function SessionAbout() {
         </div>
 
         <h2>Ocupação Atual</h2>
-        <p className="text-info">Frontend Developer at CodeLeap</p>
+        <p className="text-info">{Settings.Infos.occupation}</p>
 
         <h2>Hard Skills que mais utilizo</h2>
         <TecSkills />
       </div>
 
-      <img src="/images/eu3.png" alt="Luiz Felipe" />
+      <img className='about-photo' src="/images/eu3.png" alt="Luiz Felipe" />
 
       <div data-aos={!!isMobileVersion ? "zoom-in-right" : "zoom-in-left"} data-aos-duration="1000" className="about">
         <h1>Olá,</h1>
-        <p>
-          me chamo luiz, me aventuro em Back-end, mas sou
-          especializado em Front-end Web focado em UX e design gráfico de qualidade.
-
-          Comecei há três anos e alguns meses, desde então
-
-          criei diversos e variados projetos, sempre me aprimorando nas tecnologias que uso para
-          explorar possibilidades ilimitadas que o código é capaz de oferecer,
-          buscando soluções para os problemas que encontro.
-        </p>
+        <p>{Settings.Infos.myDescription}</p>
       </div>
     </About>
   );

@@ -3,12 +3,14 @@ import styled from 'styled-components';
 export const Services = styled.div`
   width: 100vw;
   min-height: 100vh;
+  max-width: 100vw;
   
   background-color: var(--gray-900);
 
   background-image: url('/images/services-bg.png');
   object-fit: cover;
   position: relative;
+  background-repeat: no-repeat;
 
   flex-direction: column;
   align-items: center;
@@ -50,6 +52,19 @@ export const Services = styled.div`
       background-image: none;
 
       padding: 1.2rem;
+      padding-top: 3rem;
+      gap: 2rem;
+
+      .services {
+        flex-direction: column;
+      }
+    }
+  }
+
+  @media (min-width: 980px) and (max-width: 1200px) {
+    & {
+      padding: 1.2rem;
+      padding-top: 3rem;
       gap: 2rem;
 
       .services {

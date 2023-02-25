@@ -16,7 +16,7 @@ export function SidebarNav() {
         h="14vh"
         position="fixed"
         bg="transparent"
-        zIndex="10000"
+        zIndex="999"
         align="center"
         justify="flex-end"
         py="6"
@@ -33,7 +33,7 @@ export function SidebarNav() {
         placement="right"
         onClose={onClose}
       >
-        <DrawerOverlay zIndex="100000">
+        <DrawerOverlay zIndex="999">
           <DrawerContent bg="gray.900" p="4">
             <DrawerCloseButton onClick={onClose} color="gray.50" mt="6" />
             <DrawerHeader

@@ -27,10 +27,11 @@ export const Entry = styled.main`
     width: 60%;
     height: 100vh;
 
+    overflow: hidden;
     background-color: transparent !important;
-    
+    touch-action: none;
     position: absolute;
-    right: -20px;
+    right: 0;
     top: 0;
     /* border: ${myDebugger}; */
   }
@@ -83,12 +84,18 @@ export const Entry = styled.main`
       font-size: 1.5rem;
       font-weight: 500;
       color: var(--cyan-500);
+      
 
       border-right: 2px solid white;
       white-space: nowrap;
       overflow: hidden;
 
-      animation: blinkCursor 0.8s steps(40) infinite normal, typing 6s steps(40) 1s infinite both;
+      animation: blinkCursor 0.8s steps(40) infinite normal;
+    }
+
+    .text-typing {
+      height: 2rem;
+      min-height: 2rem;
     }
 
     @keyframes typing {

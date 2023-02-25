@@ -1,6 +1,7 @@
 import NLink from "next/link";
 import { Text, Button, Spinner, useBreakpointValue } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Typed from "typed.js";
 
 import { Navigation } from "../../../components/Navigation";
 import { Interactive3DElement, View } from "../../../_app";
@@ -8,14 +9,44 @@ import { Interactive3DElement, View } from "../../../_app";
 import { Entry } from "./styles";
 import { MyParticles } from "../../MyParticles";
 import { Settings } from "../../../_app/Settings";
+import { useAppStatus } from "../../../contexts";
 
 export function SessionEntry() {
+  const { AppStatus } = useAppStatus()
   const [isLoadingElements, setIsLoadingElements] = useState(true);
+  const textTyping = useRef(null);
 
   const isMobileVersion = useBreakpointValue({
     base: true,
     lg: false,
   });
+
+  const texts = {
+    mobile: ['Criando soluções para o futuro...'],
+    large: ['Desenvolvendo soluções para o futuro...']
+  }
+
+  useEffect(() => {
+    AppStatus.set('loading')
+  }, [])
+
+  useEffect(() => {
+    const typed = new Typed(textTyping.current as any, {
+      strings: texts[!isMobileVersion ? 'mobile' : 'large'],
+      startDelay: 300,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 300,
+      smartBackspace: true,
+      loop: true,
+      showCursor: true,
+      cursorChar: "!"
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, [])
 
   return (
     <Entry>
@@ -23,11 +54,16 @@ export function SessionEntry() {
 
       {!isLoadingElements && <MyParticles id='bgParticlesPageApp' />}
 
-      {!!isLoadingElements && !isMobileVersion && <div className="loading-element-3d"><Spinner color='cyan.500' size="xl" /></div>}
+      {/* {!!isLoadingElements && !isMobileVersion && <div className="loading-element-3d"><Spinner color='cyan.500' size="xl" /></div>} */}
+      
       <Interactive3DElement
         style="element-3d"
         scene="https://prod.spline.design/CvPbd63Q829YZyZk/scene.splinecode"
-        onLoad={(SplineApplication) => {SplineApplication.setZoom(0.8); setIsLoadingElements(false)}}
+        onLoad={(SplineApplication) => {
+          SplineApplication.setZoom(0.8);
+          setIsLoadingElements(false)
+          AppStatus.set('done')
+        }}
       />
 
       <View style="content">
@@ -43,12 +79,7 @@ export function SessionEntry() {
           {Settings.Site.Name}
         </Text>
 
-        <h1 className="text-typing">
-          {isMobileVersion 
-            ? ( <>Criando soluções para o <strong>futuro...</strong></> )
-            : ( <>Desenvolvendo soluções para o <strong>futuro...</strong></> )
-          }
-        </h1>
+        <h1 className="text-typing" ref={textTyping} />
 
         <div data-aos='fade-right' data-aos-duration='1000'>
           <NLink href='/posts/web-react' passHref>

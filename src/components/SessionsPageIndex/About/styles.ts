@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const About = styled.div`
   width: 100vw;
   min-height: 100vh;
+  max-width: 100vw;
   
   background-color: var(--gray-900);
 
   background-image: url('/images/about-bg.png');
+  background-repeat: no-repeat;
   object-fit: cover;
   position: relative;
 
@@ -14,7 +16,7 @@ export const About = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  > img {
+  .about-photo {
     width: 16rem;
     height: 16rem;
 
@@ -153,7 +155,7 @@ export const About = styled.div`
     }
   }
 
-  @media (min-width: 200px) and (max-width: 980px) {
+  @media (min-width: 200px) and (max-width: 1200px) {
     & {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -164,7 +166,7 @@ export const About = styled.div`
       align-items: center;
       gap: 4rem;
 
-      > img {
+      .about-photo {
         position: static;
         animation: none;
         right: none;

@@ -168,13 +168,17 @@ export const Post = styled.div`
       margin-top: 2.5rem;
       border-radius: 0 0 0 0;
       padding: 0;
-      
+
       .post_content {
         width: 100%;
         min-height: 30rem;
         border-radius: 0 0 0 0;
+
+        ul {
+          padding-left: 1rem;
+        }
         
-        padding: 1.8rem !important;
+        padding: 1.8rem 2.1rem 1.8rem 2.1rem !important;
         box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
     
         .post_title {

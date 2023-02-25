@@ -7,7 +7,7 @@ export const ListFolders = styled.div`
   justify-content: space-between;
   padding-left: 3rem;
   padding-right: 3rem;
-  gap: 1rem;
+  /* gap: 1rem; */
 
   margin-top: -2rem !important;
   margin-bottom: 5rem !important;

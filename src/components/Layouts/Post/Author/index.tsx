@@ -17,7 +17,7 @@ export const Author = ({ name }: AuthorProps) => (
       <Text text={name} />
       <View style='social'>
         <a
-          href="https://www.linkedin.com/in/luiz-felipe-siqueira-felizatti-00783a1ab/"
+          href={Settings.Networks.Linkedin}
           target="_blank"
           rel="noreferrer noopener"
         >

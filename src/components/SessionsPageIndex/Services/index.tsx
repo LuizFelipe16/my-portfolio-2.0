@@ -1,3 +1,4 @@
+import { useBreakpointValue } from '@chakra-ui/react';
 import { FaPenNib, FaFileCode, FaMagic } from "react-icons/fa";
 
 import { ItemService } from "../../../components/ItemService";
@@ -5,6 +6,15 @@ import { ItemService } from "../../../components/ItemService";
 import { Services } from "./styles";
 
 export function SessionServices() {
+  const width = useBreakpointValue({
+    base: '100%',
+    sm: '95%',
+    md: '85%',
+    lg: '40rem',
+    xl: '40rem',
+    '2xl': '40rem',
+  });
+
   return (
     <Services id="services">
       <div>
@@ -15,8 +25,9 @@ export function SessionServices() {
           serviços e soluções
         </h2>
       </div>
-      <div className="services">
+      <div className="services" style={{ width: width }}>
         <ItemService
+          animatedFor='top'
           icon={FaFileCode}
           title="Desenvolvimento"
           text={`
@@ -26,6 +37,7 @@ export function SessionServices() {
           `}
         />
         <ItemService
+          animatedFor='bottom'
           icon={FaPenNib}
           title="Designs"
           text={`
@@ -34,6 +46,7 @@ export function SessionServices() {
           `}
         />
         <ItemService
+          animatedFor='top'
           icon={FaMagic}
           title="Interfaces"
           text={`

@@ -1,9 +1,6 @@
-import { useState, useEffect } from "react";
 import { Flex } from "@chakra-ui/react";
 import Head from "next/head";
-
 import { MenuButtons } from "../components/MenuButtons";
-import { Loading } from "../components/Loading";
 import { Footer } from "../components/Footer";
 
 import {
@@ -16,30 +13,22 @@ import {
 } from "../components/SessionsPageIndex";
 
 function IndexPage() {
-  const [isLoadingActive, setIsLoadingActive] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoadingActive(false);
-    }, 500);
-  }, []);
-
-  if (!!isLoadingActive) return <Loading text='Hello World!' />;
-
   return (
-    <Flex direction="column">
-      <Head><title>Luiz Felipe | Meu Portfólio</title></Head>
-      <MenuButtons />
+    <>
+      <Flex maxWidth='100vw' minWidth='100vw' direction="column">
+        <Head><title>Luiz Felipe | Meu Portfólio</title></Head>
+        <MenuButtons />
 
-      <SessionEntry />
-      {/* <SessionWelcome /> */}
-      <SessionAbout />
-      <SessionSkills />
-      <SessionServices />
-      <SessionPortfolio />
+        <SessionEntry />
+        {/* <SessionWelcome /> */}
+        <SessionAbout />
+        <SessionSkills />
+        <SessionServices />
+        <SessionPortfolio />
 
-      <Footer />
-    </Flex>
+        <Footer />
+      </Flex>
+    </>
   );
 }
 

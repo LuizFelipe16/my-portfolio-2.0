@@ -6,6 +6,7 @@ import styles from './styles.module.scss';
 
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
+  suspense: false,
 });
 
 interface Interactive3DElementProps extends SplineProps {
