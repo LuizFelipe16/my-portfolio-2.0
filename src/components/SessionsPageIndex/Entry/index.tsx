@@ -1,6 +1,6 @@
 import NLink from "next/link";
 import { Text, Button, Spinner, useBreakpointValue } from "@chakra-ui/react";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import Typed from "typed.js";
 
 import { Navigation } from "../../../components/Navigation";
@@ -12,11 +12,7 @@ import { Settings } from "../../../_app/Settings";
 import { useAppStatus } from "../../../contexts";
 
 export function SessionEntry() {
-  const { AppStatus } = useAppStatus()
-  const [isLoadingElements, setIsLoadingElements] = useState(true);
   const textTyping = useRef(null);
-
-  const timeout = useRef<any>(null)
 
   const isMobileVersion = useBreakpointValue({
     base: true,
@@ -24,17 +20,9 @@ export function SessionEntry() {
   });
 
   const texts = {
-    mobile: ['Criando soluções para o futuro...'],
-    large: ['Desenvolvendo soluções para o futuro...', 'Inovação através dos códigos.']
+    mobile: ['Criando soluções para o futuro...', 'Inovação através de códigos.'],
+    large: ['Desenvolvendo soluções para o futuro...', 'Inovação através de códigos.']
   }
-
-  useEffect(() => {
-    // AppStatus.set('loading')
-    // timeout.current = setTimeout(() => {
-    //   setIsLoadingElements(false)
-    //       AppStatus.set('done')
-    // }, 7000)
-  }, [])
 
   useEffect(() => {
     const typed = new Typed(textTyping.current as any, {
@@ -66,11 +54,6 @@ export function SessionEntry() {
         style="element-3d"
         loading-anim
         scene="https://prod.spline.design/CvPbd63Q829YZyZk/scene.splinecode"
-        // onLoad={(SplineApplication) => {
-        //   SplineApplication.setZoom(0.8);
-        //   setIsLoadingElements(false)
-        //   // AppStatus.set('done')
-        // }}
       />
 
       <View style="content">
