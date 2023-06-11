@@ -5,49 +5,53 @@ import { BsCalendar2WeekFill } from 'react-icons/bs';
 import { FaUserAlt } from 'react-icons/fa';
 
 import { getPrismicClient } from '../../../services';
-import { Author, Footer, HeaderPost, Loading, OptionsButtons } from '../../../components';
+import { Author, Footer, HeaderPost, OptionsButtons } from '../../../components';
 import { TitlePage, View, Text, Divider } from '../../../_app';
 import { PostData } from '../../../types';
 
 import { Post } from '../../../styles/pages/Post';
-import { useAppSelector, useTheme } from '../../../contexts';
+import { useAppSelector } from '../../../contexts';
+import { Spinner } from '@chakra-ui/react';
 
 interface PostProps {
   post: PostData;
 }
 
+function CommentsSection() {
+  const [created, setCreated] = useState(false)
+
+  useEffect(() => {
+    if (created) return
+
+    const script = document.createElement('script')
+    script.src = 'https://utteranc.es/client.js'
+    script.setAttribute('repo', 'LuizFelipe16/spaceblog-comments')
+    script.setAttribute('issue-term', 'pathname')
+    script.setAttribute('theme', 'github-dark')
+    script.setAttribute('crossorigin', 'anonymous')
+    script.async = true; 
+
+    document?.getElementById?.('utterances-comments')?.appendChild?.(script)
+
+    setCreated(true)
+  }, [])
+
+  return <>
+    <div style={{ width: '100%', minHeight: '300px', zIndex: 2, position: 'relative' }} id="utterances-comments">
+    <Spinner style={{ 
+      position: 'absolute', 
+      zIndex: 0,
+      top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)'
+      }} color='cyan.500' size="xl" />
+    </div>
+    
+  </>
+}
+
 function PagePost({ post }: PostProps) {
-  const { Theme, AppStatus } = useAppSelector(['AppStatus', 'Theme'])
-
-  // useEffect(() => { 
-  //   if (AppStatus.is === 'loading') {
-  //     AppStatus.set('done')
-  //   }
-  // }, []);
-
-  function SectionComments() {
-    return (
-      <section
-        style={{ width: '90%' }}
-        ref={
-          element => {
-            if (!element) {
-              return
-            }
-  
-            const scriptElement = document.createElement('script')
-            scriptElement.setAttribute('src', 'https://utteranc.es/client.js')
-            scriptElement.setAttribute('repo', 'LuizFelipe16/spaceblog-comments')
-            scriptElement.setAttribute('issue-term', 'pathname')
-            scriptElement.setAttribute('theme', 'photon-dark')
-            scriptElement.setAttribute('crossorigin', 'anonymous')
-            scriptElement.setAttribute('async', 'true')
-            element.replaceChildren(scriptElement)
-          }
-        }
-      />
-    );
-  }
+  const { Theme } = useAppSelector(['Theme'])
 
   return (
     <Post theme={Theme.theme}>
@@ -77,7 +81,7 @@ function PagePost({ post }: PostProps) {
           ))}
         </View>
 
-        {/* {SectionComments()} */}
+        <CommentsSection />
 
         <Author name={post.data.author} />
       </View>
