@@ -24,7 +24,7 @@ export const Entry = styled.main`
   }
 
   .element-3d {
-    width: 60%;
+    width: 80%;
     height: 100vh;
 
     background-color: transparent !important;
