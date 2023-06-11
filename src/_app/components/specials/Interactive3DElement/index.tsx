@@ -19,7 +19,7 @@ export function Interactive3DElement({ style, scene, ...rest }: Interactive3DEle
     <View style={style}>
       {/* <Spline {...rest} /> */}
 
-      <spline-viewer events-target="global" url={scene}></spline-viewer>
+      <spline-viewer events-target="global" url={scene} {...rest}></spline-viewer>
     </View>
   );
 }

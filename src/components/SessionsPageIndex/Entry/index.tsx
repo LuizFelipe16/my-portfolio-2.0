@@ -30,10 +30,10 @@ export function SessionEntry() {
 
   useEffect(() => {
     // AppStatus.set('loading')
-    timeout.current = setTimeout(() => {
-      setIsLoadingElements(false)
-          AppStatus.set('done')
-    }, 7000)
+    // timeout.current = setTimeout(() => {
+    //   setIsLoadingElements(false)
+    //       AppStatus.set('done')
+    // }, 7000)
   }, [])
 
   useEffect(() => {
@@ -58,18 +58,19 @@ export function SessionEntry() {
     <Entry>
       <Navigation />
 
-      {!isLoadingElements && <MyParticles id='bgParticlesPageApp' />}
+      <MyParticles id='bgParticlesPageApp' />
 
-      {!!isLoadingElements && !isMobileVersion && <div className="loading-element-3d"><Spinner color='cyan.500' size="xl" /></div>}
+      {/* {!!isLoadingElements && !isMobileVersion && <div className="loading-element-3d"><Spinner color='cyan.500' size="xl" /></div>} */}
       
       <Interactive3DElement
         style="element-3d"
+        loading-anim
         scene="https://prod.spline.design/CvPbd63Q829YZyZk/scene.splinecode"
-        onLoad={(SplineApplication) => {
-          SplineApplication.setZoom(0.8);
-          setIsLoadingElements(false)
-          AppStatus.set('done')
-        }}
+        // onLoad={(SplineApplication) => {
+        //   SplineApplication.setZoom(0.8);
+        //   setIsLoadingElements(false)
+        //   // AppStatus.set('done')
+        // }}
       />
 
       <View style="content">
