@@ -29,7 +29,7 @@ export function SessionEntry() {
   }
 
   useEffect(() => {
-    AppStatus.set('loading')
+    // AppStatus.set('loading')
     timeout.current = setTimeout(() => {
       setIsLoadingElements(false)
           AppStatus.set('done')
@@ -60,7 +60,7 @@ export function SessionEntry() {
 
       {!isLoadingElements && <MyParticles id='bgParticlesPageApp' />}
 
-      {/* {!!isLoadingElements && !isMobileVersion && <div className="loading-element-3d"><Spinner color='cyan.500' size="xl" /></div>} */}
+      {!!isLoadingElements && !isMobileVersion && <div className="loading-element-3d"><Spinner color='cyan.500' size="xl" /></div>}
       
       <Interactive3DElement
         style="element-3d"

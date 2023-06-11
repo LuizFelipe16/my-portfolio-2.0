@@ -50,6 +50,8 @@ export default class MyDocument extends Document {
           <script>
             AOS.init();
           </script>
+
+          <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
         </body>
       </Html>
     );
