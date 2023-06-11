@@ -25,7 +25,7 @@ export function SessionEntry() {
 
   const texts = {
     mobile: ['Criando soluções para o futuro...'],
-    large: ['Desenvolvendo soluções para o futuro...']
+    large: ['Desenvolvendo soluções para o futuro...', 'Inovação através dos códigos.']
   }
 
   useEffect(() => {

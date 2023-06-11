@@ -2,7 +2,7 @@
 export const Settings = {
   Site: {
     BlogTitle: 'CodeBlog',
-    Name: 'luizcode'
+    Name: 'luiz'
   },
   Networks: {
     Instagram: 'https://www.instagram.com/luiz_2fs/',
