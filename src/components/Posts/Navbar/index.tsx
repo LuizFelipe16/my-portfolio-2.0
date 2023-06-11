@@ -19,10 +19,10 @@ export function Navbar({ category }: NavbarProps) {
       </NLink>
       <hr className='nave-line' />
       <NLink href='/posts/web-react' passHref>
-        <Text onClick={onNavigate} className={`${category === 'web-react' && 'active'}`} text='Web' />
+        <Text className={`${category === 'web-react' && 'active'}`} text='Web' />
       </NLink>
       <NLink href='/posts/mobile-react-native' passHref>
-        <Text onClick={onNavigate} className={`${category === 'mobile-react-native' && 'active'}`} text='Mobile' />
+        <Text className={`${category === 'mobile-react-native' && 'active'}`} text='Mobile' />
       </NLink>
     </Navigation>
   );

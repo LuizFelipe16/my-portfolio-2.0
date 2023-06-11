@@ -90,7 +90,7 @@ function PagePosts({ postsPagination }: PostsProps) {
                     query: { id: post.uid, type: post.type, category: post.data.title },
                   }}>
                     <a onClick={() => {
-                      AppStatus.set('loading')
+                      // AppStatus.set('loading')
                     }}>Ver Post</a>
                   </Link>
                 </View>

@@ -17,13 +17,13 @@ interface PostProps {
 }
 
 function PagePost({ post }: PostProps) {
-  const { Theme, AppStatus} = useAppSelector(['AppStatus', 'Theme'])
+  const { Theme, AppStatus } = useAppSelector(['AppStatus', 'Theme'])
 
-  useEffect(() => { 
-    if (AppStatus.is === 'loading') {
-      AppStatus.set('done')
-    }
-  }, []);
+  // useEffect(() => { 
+  //   if (AppStatus.is === 'loading') {
+  //     AppStatus.set('done')
+  //   }
+  // }, []);
 
   function SectionComments() {
     return (
