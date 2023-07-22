@@ -1,10 +1,11 @@
 import React, { HTMLAttributes, ReactNode } from "react";
-
+import { motion } from 'framer-motion'
 interface ViewProps extends HTMLAttributes<HTMLDivElement> {
   style?: string | undefined | any;
   children?: ReactNode;
   type?: 'div' | 'main';
   css?: Array<React.CSSProperties>
+  animated?: boolean
 }
 
 export const View = (
@@ -12,12 +13,13 @@ export const View = (
     children,
     style,
     type = 'div',
+    animated = false,
     css,
     ...rest
   }: ViewProps
 ) => {
   const cachedStyle = React.useMemo(() => {
-    if (!css) return {}
+    if (!css) return null
 
     let style = {}
 
@@ -28,8 +30,16 @@ export const View = (
     return style
   }, [css])
 
-  const props = {
+  const props = !!cachedStyle ? {
     style: cachedStyle,
+  } : {}
+
+  if (animated) {
+    return (
+      <motion.div {...props} {...rest}>
+        {children}
+      </motion.div>
+    )
   }
 
   if (type === 'main') {

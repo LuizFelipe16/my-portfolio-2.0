@@ -24,20 +24,19 @@ export function Navbar() {
 }
 
 const wrapperStyle = themeProvider.createComponentStyle(theme => ({
-  width: '100vw',
-  height: 'auto',
+  width: theme.values.width,
+  height: theme.values.auto,
   top: theme.spacing.value(0),
   left: theme.spacing.value(0),
   right: theme.spacing.value(0),
   paddingTop: theme.spacing.value(2),
   paddingBottom: theme.spacing.value(1),
   paddingLeft: valueLeftContentTexts,
-
+  transition: 'all 0.2s',
   ...theme.presets.fixed,
-  ...theme.spacing.gap(2),
+  ...theme.presets.row,
   ...theme.presets.alignCenter,
   ...theme.presets.justifyStart,
   ...theme.funcs.index(999),
-
-  transition: 'all 0.2s'
+  ...theme.spacing.gap(4),
 }))

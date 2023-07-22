@@ -37,23 +37,36 @@ const functionsPresets = {
       zIndex: zValue,
     }
   },
+
+  onHover: function (style: Style): Style {
+    return {
+      '&:hover': style,
+    } as Style
+  }
 }
 
 type ThemeFunctionPresets = typeof functionsPresets
 
 // 
 
-const spacingBaseValue = 8
+const spacingBaseValue = 0.5
 
 const AppTheme = {
+  values: {
+    spacing: spacingBaseValue,
+    width: '100vw',
+    height: '100svh',
+    auto: 'auto',
+  },
+  colors: {
+    transparent: '#FFFFFF00'
+  },
   spacing: {
-    baseValue: spacingBaseValue,
-
-    value: function (multiplier: number, unity: 'rem' | 'px' = 'px') {
+    value: function (multiplier: number, unity: 'rem' | 'px' = 'rem') {
       return `${multiplier * spacingBaseValue}${unity}`
     },
 
-    gap: function (multiplier: number, unity: 'rem' | 'px' = 'px') {
+    gap: function (multiplier: number, unity: 'rem' | 'px' = 'rem') {
       return {
         gap: `${multiplier * spacingBaseValue}${unity}`,
       }
