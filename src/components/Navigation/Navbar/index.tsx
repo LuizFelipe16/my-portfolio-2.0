@@ -32,7 +32,7 @@ const wrapperStyle = themeProvider.createComponentStyle(theme => ({
   paddingTop: theme.spacing.value(2),
   paddingBottom: theme.spacing.value(1),
   paddingLeft: valueLeftContentTexts,
-  transition: 'all 0.2s',
+  transition: 'all 0.4s',
   ...theme.presets.fixed,
   ...theme.presets.row,
   ...theme.presets.alignCenter,

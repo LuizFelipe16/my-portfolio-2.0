@@ -6,6 +6,9 @@ const presets = {
   fixed: {
     position: 'fixed',
   },
+  absolute: {
+    position: 'absolute',
+  },
   row: {
     display: 'flex',
     flexDirection: 'row',
@@ -23,6 +26,12 @@ const presets = {
   justifyStart: {
     justifyContent: 'flex-start',
   },
+  whole: {
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  }
 }
 
 type KeyPresets = keyof typeof presets
@@ -50,25 +59,33 @@ type ThemeFunctionPresets = typeof functionsPresets
 // 
 
 const spacingBaseValue = 0.5
+const baseUnit = 'rem'
+
+type ThemeUnit = 'rem' | 'px'
 
 const AppTheme = {
   values: {
     spacing: spacingBaseValue,
+    unit: baseUnit,
     width: '100vw',
     height: '100svh',
     auto: 'auto',
   },
   colors: {
+    primary1: '#48CDD0',
+    primary2: '#10CDD0',
+    primary3: '#00CDD0',
+    secondary1: '#171923',
     transparent: '#FFFFFF00'
   },
   spacing: {
-    value: function (multiplier: number, unity: 'rem' | 'px' = 'rem') {
-      return `${multiplier * spacingBaseValue}${unity}`
+    value: function (multiplier: number, unit: ThemeUnit = baseUnit) {
+      return `${multiplier * spacingBaseValue}${unit}`
     },
 
-    gap: function (multiplier: number, unity: 'rem' | 'px' = 'rem') {
+    gap: function (multiplier: number, unit: ThemeUnit = baseUnit) {
       return {
-        gap: `${multiplier * spacingBaseValue}${unity}`,
+        gap: `${multiplier * spacingBaseValue}${unit}`,
       }
     },
   },
