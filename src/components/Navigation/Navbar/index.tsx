@@ -8,10 +8,11 @@ export function Navbar() {
     <HStack
       w="100vw"
       h="auto"
-      position="absolute"
+      position="fixed"
       top="0"
       pl={valueLeftContentTexts}
-      py="12"
+      py="3"
+      pt='5'
 
       // boxShadow="dark-lg"
       textShadow="dark-lg"
@@ -20,7 +21,7 @@ export function Navbar() {
       // background="primaryGray.1"
       // borderBottomColor="cyan.500"
       // borderBottomWidth={2}
-
+      backdropFilter='blur(4px) brightness(85%)'
       spacing="12"
       align="center"
       justify="flex-start"
