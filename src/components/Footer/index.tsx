@@ -144,8 +144,6 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             fontFamily="Montserrat"
             align={["center", "center", "flex-start"]}
             justify={["center", "center", "flex-start"]}
-            borderColor="gray.800"
-            borderLeftWidth={[0, 0, 2]}
           >
             <Heading
               color="cyan.500"
@@ -169,8 +167,6 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             align={["center", "center", "flex-start"]}
             justify={["center", "center", "flex-start"]}
             textAlign={["center", "center", "start"]}
-            borderColor="gray.800"
-            borderLeftWidth={[0, 0, 2]}
           >
             <Heading
               color="cyan.500"
@@ -216,8 +212,6 @@ export function Footer({ isNotContact = false, isNotSessions = false, isBlog = f
             fontFamily="Montserrat"
             align={["center", "center", "flex-start"]}
             justify={["center", "center", "flex-start"]}
-            borderColor="gray.800"
-            borderLeftWidth={[0, 0, 2]}
             textAlign={["center", "center", "start"]}
           >
             <Heading

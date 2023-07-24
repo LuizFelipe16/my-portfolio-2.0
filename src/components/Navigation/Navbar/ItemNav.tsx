@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { scrollAnimationToSessionPageById } from "../../../utils/scrollAnimationToSessionPageById";
 import { ItemNavStyles, ItemLinkNavStyles } from "../styles";
+import Tilt from 'react-parallax-tilt'
 
 interface IItemNavProps {
   text: string;
@@ -13,19 +14,29 @@ export function ItemNav({ href, text, isPage = false }: IItemNavProps) {
 
   if (isPage === true) {
     return (
-      <Link href={`/${href}`} passHref>
-        <ItemLinkNavStyles>
-          {text}
-          <hr />
-        </ItemLinkNavStyles>
-      </Link>
+      <Tilt 
+        tiltEnable={true} 
+        scale={true ? 1.05 : 1} 
+      >
+        <Link href={`/${href}`} passHref>
+          <ItemLinkNavStyles>
+            {text}
+            <hr />
+          </ItemLinkNavStyles>
+        </Link>
+      </Tilt>
     );
   } else {
     return (
-      <ItemNavStyles onClick={scroll}>
-        {text}
-        <hr />
-      </ItemNavStyles>
+      <Tilt 
+        tiltEnable={true} 
+        scale={true ? 1.05 : 1} 
+      >
+        <ItemNavStyles onClick={scroll}>
+          {text}
+          <hr />
+        </ItemNavStyles>
+      </Tilt>
     );
   }
 }

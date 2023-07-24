@@ -121,9 +121,11 @@ export const Entry = styled.main`
       font-weight: 400;
       border-radius: 9999px;
 
-      padding: 1.5rem 4rem;
+      /* padding: 1rem 1rem; */
+      height: 60px;
+      width: 60px;
       background-color: var(--gray-800);
-      margin-top: 3.5rem;
+      margin-top: 1rem;
       
       /* border: 1px solid var(--cyan-500); */
       border-color: var(--gray-900);
@@ -131,11 +133,10 @@ export const Entry = styled.main`
 
       gap: 1.5rem;
       
-      transition: 0.3s;
+      transition: 0.5s;
       animation: blinker_neon 4s infinite both;
 
       &:hover {
-        margin-left: 0.5rem;
         background-color: var(--gray-900);
       }
 

@@ -1,8 +1,7 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Image } from "@chakra-ui/react";
 import Head from "next/head";
 import { MenuButtons } from "../components/MenuButtons";
 import { Footer } from "../components/Footer";
-
 import {
   SessionWelcome,
   SessionAbout,
@@ -11,6 +10,7 @@ import {
   SessionPortfolio,
   SessionEntry
 } from "../components/SessionsPageIndex";
+import { View } from '../_app';
 
 function IndexPage() {
   return (

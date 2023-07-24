@@ -4,6 +4,7 @@ import { useScroll } from '../../../utils';
 import { themeProvider, View } from '../../../_app';
 import { valueLeftContentTexts } from "../../SessionsPageIndex/Entry/styles";
 import { ItemNav } from './ItemNav';
+import Tilt from 'react-parallax-tilt'
 
 export function Navbar() {
   const scroll = useScroll()

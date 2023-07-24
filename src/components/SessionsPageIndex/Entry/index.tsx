@@ -10,6 +10,7 @@ import { Entry } from "./styles";
 import { MyParticles } from "../../MyParticles";
 import { Settings } from "../../../_app/Settings";
 import { useAppStatus } from "../../../contexts";
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 export function SessionEntry() {
   const textTyping = useRef(null);
@@ -71,13 +72,22 @@ export function SessionEntry() {
 
         <h1 className="text-typing" ref={textTyping} />
 
-        <div data-aos='fade-right' data-aos-duration='1000'>
+        <div data-aos='fade-right' data-aos-duration='1000' style={{ gap: 20 }}>
           <NLink href='/posts/web-react' passHref>
             <Button 
               className='access-button'
               boxShadow='dark-lg'
             >
-              Blog
+              <BsGithub size={25} />
+            </Button>
+          </NLink>
+
+          <NLink href='/posts/web-react' passHref>
+            <Button 
+              className='access-button'
+              boxShadow='dark-lg'
+            >
+              <BsLinkedin size={20} />
             </Button>
           </NLink>
         </div>
