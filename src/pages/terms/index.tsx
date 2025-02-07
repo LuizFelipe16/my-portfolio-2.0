@@ -2,18 +2,17 @@ import React from 'react';
 
 export default function TermsOfUse() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', color: 'white' }}>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h1>Terms of Use</h1>
-      <p>Last updated: [Insert Date]</p>
 
       <h2>1. Acceptance of Terms</h2>
       <p>
-        By accessing and using [Your App Name] ("the App"), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this App's particular services, you shall be subject to any posted guidelines or rules applicable to such services.
+        By accessing and using [Your App Name] (&quot;the App&quot;), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this App&apos;s particular services, you shall be subject to any posted guidelines or rules applicable to such services.
       </p>
 
       <h2>2. Description of Service</h2>
       <p>
-        [Your App Name] is a [brief description of your app's purpose and functionality]. You understand and agree that the Service is provided "as-is" and that [Your Company Name] assumes no responsibility for the timeliness, deletion, misdelivery, or failure to store any user communications or personalization settings.
+        [Your App Name] is a [brief description of your app&apos;s purpose and functionality]. You understand and agree that the Service is provided &quot;as-is&quot; and that [Your Company Name] assumes no responsibility for the timeliness, deletion, misdelivery, or failure to store any user communications or personalization settings.
       </p>
 
       <h2>3. User Obligations</h2>
@@ -40,7 +39,7 @@ export default function TermsOfUse() {
       <p>
         You expressly understand and agree that:
         <ul>
-          <li>Your use of the Service is at your sole risk. The Service is provided on an "as is" and "as available" basis.</li>
+          <li>Your use of the Service is at your sole risk. The Service is provided on an &quot;as is&quot; and &quot;as available&quot; basis.</li>
           <li>[Your Company Name] makes no warranty that (i) the Service will meet your requirements, (ii) the Service will be uninterrupted, timely, secure, or error-free, (iii) the results that may be obtained from the use of the Service will be accurate or reliable, (iv) the quality of any products, services, information, or other material purchased or obtained by you through the Service will meet your expectations, and (v) any errors in the software will be corrected.</li>
         </ul>
       </p>
