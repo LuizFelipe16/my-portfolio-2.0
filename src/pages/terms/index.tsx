@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function TermsOfUse() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', display: 'flex', flexDirection: 'column', color: 'white' }}>
       <h1>Terms of Use</h1>
 
       <h2>1. Acceptance of Terms</h2>
