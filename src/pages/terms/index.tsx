@@ -1,8 +1,6 @@
-import { Link, Text, TitlePage, View } from '../../_app';
-
 export default function Terms() {
   return <>
-    <h1>Terms of Use of Template Mobile/h1>
+    <h1>Terms of Use of Template Mobile</h1>
     <p>This document governs</p>
     <ul>
       <li>the use of our website, and,</li>
